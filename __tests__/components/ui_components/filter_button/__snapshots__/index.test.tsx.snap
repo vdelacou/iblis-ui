@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="MuiGrid-item-2"
+>
+  <button
+    className="MuiButtonBase-root-97"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "background": "#424242",
+        "border": "1px solid#757575",
+        "borderBottomLeftRadius": "6px",
+        "borderBottomRightRadius": 0,
+        "borderTopLeftRadius": "6px",
+        "borderTopRightRadius": 0,
+        "lineHeight": "0",
+        "padding": 8,
+        "paddingBottom": 6,
+      }
+    }
+    tabIndex="0"
+    type="button"
+  >
+    <p
+      className="MuiTypography-root-100 MuiTypography-body1-109 MuiTypography-alignCenter-113"
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      All
+    </p>
+    <span
+      className="MuiTypography-root-100 MuiTypography-caption-110 MuiTypography-alignCenter-113"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      88
+    </span>
+    <span
+      className="MuiTouchRipple-root-124"
+    />
+  </button>
+  <button
+    className="MuiButtonBase-root-97"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "borderBottom": "1px solid#757575",
+        "borderRadius": 0,
+        "borderRight": "1px solid#757575",
+        "borderTop": "1px solid#757575",
+        "padding": 8,
+        "paddingBottom": 6,
+      }
+    }
+    tabIndex="0"
+    type="button"
+  >
+    <p
+      className="MuiTypography-root-100 MuiTypography-body1-109 MuiTypography-alignCenter-113"
+    >
+      Published
+    </p>
+    <span
+      className="MuiTypography-root-100 MuiTypography-caption-110 MuiTypography-alignCenter-113"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      34
+    </span>
+    <span
+      className="MuiTouchRipple-root-124"
+    />
+  </button>
+  <button
+    className="MuiButtonBase-root-97"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "borderBottom": "1px solid#757575",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": "6px",
+        "borderRight": "1px solid#757575",
+        "borderTop": "1px solid#757575",
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": "6px",
+        "padding": 8,
+        "paddingBottom": 6,
+      }
+    }
+    tabIndex="0"
+    type="button"
+  >
+    <p
+      className="MuiTypography-root-100 MuiTypography-body1-109 MuiTypography-alignCenter-113"
+    >
+      Draft
+    </p>
+    <span
+      className="MuiTypography-root-100 MuiTypography-caption-110 MuiTypography-alignCenter-113"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      12
+    </span>
+    <span
+      className="MuiTouchRipple-root-124"
+    />
+  </button>
+</div>
+`;

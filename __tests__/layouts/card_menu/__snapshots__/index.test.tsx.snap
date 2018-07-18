@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="MuiPaper-root-4 MuiPaper-elevation2-8 MuiPaper-rounded-5"
+>
+  <header
+    className="MuiPaper-root-4 MuiPaper-elevation0-6 MuiAppBar-root-31 CardMenuBase-appBarMenuRoot-1 MuiAppBar-positionStatic-35"
+  >
+    <div
+      className="MuiToolbar-root-39 CardMenuBase-toolBarMenuRoot-2 MuiToolbar-regular-41 MuiToolbar-gutters-40"
+    >
+      <div
+        className="MuiTabs-root-43"
+      >
+        <div>
+          <div
+            style={
+              Object {
+                "height": "100px",
+                "msOverflowStyle": "scrollbar",
+                "overflow": "scroll",
+                "position": "absolute",
+                "top": "-10000px",
+                "width": "100px",
+              }
+            }
+          />
+        </div>
+        <div
+          className="MuiTabs-flexContainer-44"
+        >
+          <div
+            className="MuiTabs-scroller-45 MuiTabs-scrollable-47"
+            onScroll={[Function]}
+            role="tablist"
+            style={
+              Object {
+                "marginBottom": NaN,
+              }
+            }
+          >
+            <div
+              className="MuiTabs-flexContainer-44"
+            >
+              <button
+                aria-selected={true}
+                className="MuiButtonBase-root-64 MuiTab-root-52 MuiTab-textColorPrimary-55 MuiTab-selected-57"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                role="tab"
+                style={
+                  Object {
+                    "marginRight": 16,
+                    "minWidth": 8,
+                    "padding": 0,
+                    "paddingLeft": 4,
+                    "paddingRight": 4,
+                  }
+                }
+                tabIndex="0"
+                type="button"
+              >
+                <span
+                  className="MuiTab-wrapper-60"
+                >
+                  <span
+                    className="MuiTab-labelContainer-61 CardMenuBase-tabLabelContainer-3"
+                  >
+                    <span
+                      className="MuiTab-label-62"
+                    >
+                      Profile
+                    </span>
+                  </span>
+                </span>
+                <span
+                  className="MuiTouchRipple-root-70"
+                />
+              </button>
+              <button
+                aria-selected={false}
+                className="MuiButtonBase-root-64 MuiTab-root-52 MuiTab-textColorPrimary-55"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                role="tab"
+                style={
+                  Object {
+                    "marginRight": 16,
+                    "minWidth": 8,
+                    "padding": 0,
+                    "paddingLeft": 4,
+                    "paddingRight": 4,
+                  }
+                }
+                tabIndex="0"
+                type="button"
+              >
+                <span
+                  className="MuiTab-wrapper-60"
+                >
+                  <span
+                    className="MuiTab-labelContainer-61 CardMenuBase-tabLabelContainer-3"
+                  >
+                    <span
+                      className="MuiTab-label-62"
+                    >
+                      Security
+                    </span>
+                  </span>
+                </span>
+                <span
+                  className="MuiTouchRipple-root-70"
+                />
+              </button>
+            </div>
+            <span
+              className="TabIndicator-root-67 TabIndicator-colorPrimary-68 MuiTabs-indicator-51"
+              style={
+                Object {
+                  "left": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div
+    style={
+      Object {
+        "padding": 24,
+      }
+    }
+  >
+    Place Content Here
+  </div>
+</div>
+`;

@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div>
+    <form
+      noValidate={true}
+      onSubmit={[Function]}
+    >
+      <div
+        className="MuiGrid-container-1"
+      >
+        <div
+          className="MuiGrid-item-2 MuiGrid-grid-xs-8-36"
+          style={
+            Object {
+              "paddingRight": 8,
+            }
+          }
+        >
+          <div>
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                }
+              }
+            >
+              <div
+                className="MuiFormControl-root-99 IblisTextFieldBase-textFieldRoot-97 MuiFormControl-fullWidth-102"
+              >
+                <div
+                  className="MuiInput-root-103 MuiInput-fullWidth-110 MuiInput-formControl-104"
+                >
+                  <input
+                    aria-invalid={false}
+                    autoFocus={false}
+                    className="MuiInput-input-111 IblisTextFieldBase-textFieldInput-98"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    placeholder="Enter your name"
+                    required={true}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <span
+                className="MuiTypography-root-116 MuiTypography-caption-126 MuiTypography-colorError-139"
+              >
+                *
+              </span>
+            </div>
+            <span
+              className="MuiTypography-root-116 MuiTypography-caption-126 MuiTypography-colorError-139"
+            >
+               
+            </span>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-item-2"
+        >
+          <button
+            className="MuiButtonBase-root-164 MuiButton-root-140 MuiButton-contained-149 MuiButton-raised-152"
+            disabled={false}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="submit"
+          >
+            <span
+              className="MuiButton-label-141"
+            >
+              Add
+            </span>
+            <span
+              className="MuiTouchRipple-root-167"
+            />
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div>
+    <div>
+      <form
+        noValidate={true}
+        onSubmit={[Function]}
+      >
+        <div
+          className="MuiGrid-container-1 MuiGrid-align-items-xs-flex-start-10"
+        >
+          <div
+            className="MuiGrid-item-2 MuiGrid-grid-xs-8-36 MuiGrid-grid-sm-10-52"
+            style={
+              Object {
+                "height": 60,
+              }
+            }
+          >
+            <h3
+              className="MuiTypography-root-116 MuiTypography-subheading-123 MuiTypography-noWrap-132"
+              style={
+                Object {
+                  "paddingBottom": 8,
+                  "paddingLeft": 9,
+                  "paddingTop": 16,
+                }
+              }
+            >
+              Marketing
+            </h3>
+          </div>
+          <div
+            className="MuiGrid-item-2 MuiGrid-grid-xs-4-32 MuiGrid-grid-sm-2-44"
+            style={
+              Object {
+                "paddingRight": 8,
+                "paddingTop": 4,
+                "textAlign": "right",
+              }
+            }
+          >
+            <div>
+              <button
+                className="MuiButtonBase-root-164 MuiIconButton-root-174"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <span
+                  className="MuiIconButton-label-179"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root-180"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <g>
+                      <path
+                        d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                <span
+                  className="MuiTouchRipple-root-167"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div>
+    <div>
+      <form
+        noValidate={true}
+        onSubmit={[Function]}
+      >
+        <div
+          className="MuiGrid-container-1 MuiGrid-align-items-xs-flex-start-10"
+        >
+          <div
+            className="MuiGrid-item-2 MuiGrid-grid-xs-8-36 MuiGrid-grid-sm-10-52"
+            style={
+              Object {
+                "height": 60,
+              }
+            }
+          >
+            <h3
+              className="MuiTypography-root-116 MuiTypography-subheading-123 MuiTypography-noWrap-132"
+              style={
+                Object {
+                  "paddingBottom": 8,
+                  "paddingLeft": 9,
+                  "paddingTop": 16,
+                }
+              }
+            >
+              Legal
+            </h3>
+          </div>
+          <div
+            className="MuiGrid-item-2 MuiGrid-grid-xs-4-32 MuiGrid-grid-sm-2-44"
+            style={
+              Object {
+                "paddingRight": 8,
+                "paddingTop": 4,
+                "textAlign": "right",
+              }
+            }
+          >
+            <div>
+              <button
+                className="MuiButtonBase-root-164 MuiIconButton-root-174"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <span
+                  className="MuiIconButton-label-179"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root-180"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <g>
+                      <path
+                        d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                <span
+                  className="MuiTouchRipple-root-167"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
