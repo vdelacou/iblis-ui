@@ -8,8 +8,9 @@
     "outDir": "build/dist", // target for compiled files
     "allowSyntheticDefaultImports": true, // no errors with commonjs modules interop
     "esModuleInterop": true,
-    "allowJs": false, // include js files
-    "declaration": true, // emit declarations
+    "allowJs": true, // include js files
+    "checkJs": true, // typecheck js files
+    "declaration": false, // don't emit declarations
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
