@@ -19,5 +19,8 @@
     "setupFiles": [
         "./jest.stubs.js"
     ],
-    "setupTestFrameworkScriptFile": "./jest.tests.js"
+    "setupTestFrameworkScriptFile": "./jest.tests.js",
+    "collectCoverage": true,
+    "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
+    "coverageReporters": ["json", "html"]
 }

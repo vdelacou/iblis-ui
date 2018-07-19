@@ -1,7 +1,13 @@
+version: "2"
+
 exclude_patterns:
   - "__tests__/"
   - "stories/"
   - "docs/"
+
+plugins:
+  tslint:
+    enabled: true
 
 checks:
   file-lines:
