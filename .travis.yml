@@ -7,7 +7,7 @@ branches:
   - master
   
 install:
-- yarn'
+- yarn
 
 script:
   - yarn build
