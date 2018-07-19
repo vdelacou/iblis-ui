@@ -9,6 +9,11 @@ plugins:
   tslint:
     enabled: true
 
+ratings:
+  paths:
+  - "**.ts"
+  - "**.tsx"
+
 checks:
   file-lines:
       config:
