@@ -572,6 +572,10 @@
   dependencies:
     "@types/react" "*"
 
+"@types/storybook__addon-options@^3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@types/storybook__addon-options/-/storybook__addon-options-3.2.2.tgz#f42f81414fa9692cf20d947e9b49c60c4bdfbc4d"
+
 "@types/storybook__addon-storyshots@^3.4.3":
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/@types/storybook__addon-storyshots/-/storybook__addon-storyshots-3.4.3.tgz#fd39387b6bb3b3f5bd857b7de857b6574926217f"

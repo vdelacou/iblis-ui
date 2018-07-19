@@ -48,6 +48,7 @@
     "@types/redux-logger": "^3.0.6",
     "@types/storybook__addon-actions": "^3.0.3",
     "@types/storybook__addon-info": "^3.2.3",
+    "@types/storybook__addon-options": "^3.2.2",
     "@types/storybook__addon-storyshots": "^3.4.3",
     "@types/storybook__react": "^3.0.8",
     "awesome-typescript-loader": "^5.2.0",
