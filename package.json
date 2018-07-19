@@ -3,7 +3,7 @@
   "version": "0.0.1-alpha.1",
   "license": "Apache-2.0",
   "author": "Vincent Delacourt <vincent.delacourt@gmail.com>",
-  "description": "Beautiful React UI components to be used in an SaaS",
+  "description": "Beautiful React UI components to be used in a SaaS",
   "main": "build/dist/src/index.js",
   "types": "build/dist/src/index.d.ts",
   "dependencies": {
