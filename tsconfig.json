@@ -1,16 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": "./", // enables project relative paths config
-    "paths": { // define paths mappings
-      "@src/*": ["src/*"] // will enable -> import { ... } from '@src/components'
-      // in webpack you need to add -> resolve: { alias: { '@src': PATH_TO_SRC } }
-    },
     "outDir": "build/dist", // target for compiled files
     "allowSyntheticDefaultImports": true, // no errors with commonjs modules interop
     "esModuleInterop": true,
-    "allowJs": true, // include js files
-    "checkJs": true, // typecheck js files
-    "declaration": false, // don't emit declarations
+    "allowJs": false, // don't include js files
+    "declaration": true, // emit declarations
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
@@ -41,6 +36,7 @@
   ],
   "exclude": [
     "node_modules",
-    "src/**/*.spec.*"
+    "src/**/*.spec.*",
+    "jest.tests.ts",
   ]
 }
