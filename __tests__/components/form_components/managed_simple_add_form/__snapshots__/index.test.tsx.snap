@@ -11,7 +11,7 @@ exports[`renders correctly 1`] = `
         className="MuiGrid-container-1"
       >
         <div
-          className="MuiGrid-item-2 MuiGrid-grid-xs-8-36"
+          className="MuiGrid-item-2 MuiGrid-grid-xs-8-37"
           style={
             Object {
               "paddingRight": 8,
@@ -27,15 +27,15 @@ exports[`renders correctly 1`] = `
               }
             >
               <div
-                className="MuiFormControl-root-99 IblisTextFieldBase-textFieldRoot-97 MuiFormControl-fullWidth-102"
+                className="MuiFormControl-root-100 IblisTextFieldBase-textFieldRoot-98 MuiFormControl-fullWidth-103"
               >
                 <div
-                  className="MuiInput-root-103 MuiInput-fullWidth-110 MuiInput-formControl-104"
+                  className="MuiInput-root-104 MuiInput-fullWidth-111 MuiInput-formControl-105"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInput-input-111 IblisTextFieldBase-textFieldInput-98"
+                    className="MuiInput-input-112 IblisTextFieldBase-textFieldInput-99"
                     disabled={false}
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -48,13 +48,13 @@ exports[`renders correctly 1`] = `
                 </div>
               </div>
               <span
-                className="MuiTypography-root-116 MuiTypography-caption-126 MuiTypography-colorError-139"
+                className="MuiTypography-root-117 MuiTypography-caption-127 MuiTypography-colorError-141"
               >
                 *
               </span>
             </div>
             <span
-              className="MuiTypography-root-116 MuiTypography-caption-126 MuiTypography-colorError-139"
+              className="MuiTypography-root-117 MuiTypography-caption-127 MuiTypography-colorError-141"
             >
                
             </span>
@@ -64,7 +64,7 @@ exports[`renders correctly 1`] = `
           className="MuiGrid-item-2"
         >
           <button
-            className="MuiButtonBase-root-164 MuiButton-root-140 MuiButton-contained-149 MuiButton-raised-152"
+            className="MuiButtonBase-root-168 MuiButton-root-142 MuiButton-contained-153 MuiButton-raised-156"
             disabled={false}
             onBlur={[Function]}
             onFocus={[Function]}
@@ -80,12 +80,12 @@ exports[`renders correctly 1`] = `
             type="submit"
           >
             <span
-              className="MuiButton-label-141"
+              className="MuiButton-label-143"
             >
               Add
             </span>
             <span
-              className="MuiTouchRipple-root-167"
+              className="MuiTouchRipple-root-171"
             />
           </button>
         </div>
@@ -102,7 +102,7 @@ exports[`renders correctly 1`] = `
           className="MuiGrid-container-1 MuiGrid-align-items-xs-flex-start-10"
         >
           <div
-            className="MuiGrid-item-2 MuiGrid-grid-xs-8-36 MuiGrid-grid-sm-10-52"
+            className="MuiGrid-item-2 MuiGrid-grid-xs-8-37 MuiGrid-grid-sm-10-53"
             style={
               Object {
                 "height": 60,
@@ -110,7 +110,7 @@ exports[`renders correctly 1`] = `
             }
           >
             <h3
-              className="MuiTypography-root-116 MuiTypography-subheading-123 MuiTypography-noWrap-132"
+              className="MuiTypography-root-117 MuiTypography-subheading-124 MuiTypography-noWrap-133"
               style={
                 Object {
                   "paddingBottom": 8,
@@ -123,7 +123,7 @@ exports[`renders correctly 1`] = `
             </h3>
           </div>
           <div
-            className="MuiGrid-item-2 MuiGrid-grid-xs-4-32 MuiGrid-grid-sm-2-44"
+            className="MuiGrid-item-2 MuiGrid-grid-xs-4-33 MuiGrid-grid-sm-2-45"
             style={
               Object {
                 "paddingRight": 8,
@@ -134,7 +134,7 @@ exports[`renders correctly 1`] = `
           >
             <div>
               <button
-                className="MuiButtonBase-root-164 MuiIconButton-root-174"
+                className="MuiButtonBase-root-168 MuiIconButton-root-178"
                 disabled={false}
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -151,23 +151,25 @@ exports[`renders correctly 1`] = `
                 type="button"
               >
                 <span
-                  className="MuiIconButton-label-179"
+                  className="MuiIconButton-label-183"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-180"
+                    className="MuiSvgIcon-root-184"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
-                    <g>
-                      <path
-                        d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                      />
-                    </g>
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
                   </svg>
                 </span>
                 <span
-                  className="MuiTouchRipple-root-167"
+                  className="MuiTouchRipple-root-171"
                 />
               </button>
             </div>
@@ -186,7 +188,7 @@ exports[`renders correctly 1`] = `
           className="MuiGrid-container-1 MuiGrid-align-items-xs-flex-start-10"
         >
           <div
-            className="MuiGrid-item-2 MuiGrid-grid-xs-8-36 MuiGrid-grid-sm-10-52"
+            className="MuiGrid-item-2 MuiGrid-grid-xs-8-37 MuiGrid-grid-sm-10-53"
             style={
               Object {
                 "height": 60,
@@ -194,7 +196,7 @@ exports[`renders correctly 1`] = `
             }
           >
             <h3
-              className="MuiTypography-root-116 MuiTypography-subheading-123 MuiTypography-noWrap-132"
+              className="MuiTypography-root-117 MuiTypography-subheading-124 MuiTypography-noWrap-133"
               style={
                 Object {
                   "paddingBottom": 8,
@@ -207,7 +209,7 @@ exports[`renders correctly 1`] = `
             </h3>
           </div>
           <div
-            className="MuiGrid-item-2 MuiGrid-grid-xs-4-32 MuiGrid-grid-sm-2-44"
+            className="MuiGrid-item-2 MuiGrid-grid-xs-4-33 MuiGrid-grid-sm-2-45"
             style={
               Object {
                 "paddingRight": 8,
@@ -218,7 +220,7 @@ exports[`renders correctly 1`] = `
           >
             <div>
               <button
-                className="MuiButtonBase-root-164 MuiIconButton-root-174"
+                className="MuiButtonBase-root-168 MuiIconButton-root-178"
                 disabled={false}
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -235,23 +237,25 @@ exports[`renders correctly 1`] = `
                 type="button"
               >
                 <span
-                  className="MuiIconButton-label-179"
+                  className="MuiIconButton-label-183"
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-180"
+                    className="MuiSvgIcon-root-184"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
-                    <g>
-                      <path
-                        d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                      />
-                    </g>
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
                   </svg>
                 </span>
                 <span
-                  className="MuiTouchRipple-root-167"
+                  className="MuiTouchRipple-root-171"
                 />
               </button>
             </div>

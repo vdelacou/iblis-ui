@@ -6,7 +6,6 @@
     "testRegex": "(/spec/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleFileExtensions": ["ts", "tsx", "js", "json"],
     "moduleNameMapper": {
-        "^@src(.*)$": "<rootDir>/src$1",
         "\\.(css)$": "<rootDir>/__tests__/__mocks__/.$1.js",
         "\\.(png)$": "<rootDir>/__tests__/__mocks__/.$1.js"
     },
@@ -19,7 +18,7 @@
     "setupFiles": [
         "./jest.stubs.js"
     ],
-    "setupTestFrameworkScriptFile": "./jest.tests.js",
+    "setupTestFrameworkScriptFile": "./jest.tests.ts",
     "collectCoverage": true,
     "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
     "coverageReporters": ["json", "html"]
