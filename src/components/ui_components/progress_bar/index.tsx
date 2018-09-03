@@ -45,9 +45,9 @@ const renderMenu = (menuList: string[], activeIndex: number, theme: Theme) => {
     });
 };
 
-const ProgressBarWithTheme: React.ComponentClass<ProgressBarProps> = withTheme()(ProgressBarBase);
+const ProgressBarWithTheme: React.ComponentType<ProgressBarProps> = withTheme()(ProgressBarBase);
 
 /**
  * Display aprogress bar of different steps
  */
-export const ProgressBar: React.ComponentClass<ProgressBarProps> = (ProgressBarWithTheme);
+export const ProgressBar: React.ComponentType<ProgressBarProps> = (ProgressBarWithTheme);

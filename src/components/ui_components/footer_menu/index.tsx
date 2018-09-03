@@ -59,9 +59,9 @@ const renderMenu = (menu: FooterMenuLevelProps[], theme: Theme) => {
     });
 };
 
-const FooterMenuWithTheme: React.ComponentClass<FooterMenuProps> = withTheme()(FooterMenuBase);
+const FooterMenuWithTheme: React.ComponentType<FooterMenuProps> = withTheme()(FooterMenuBase);
 /**
  * Component to display the footer menu. This menu is responsive.
  * On mobile only the copyright part stay.
  */
-export const FooterMenu: React.ComponentClass<FooterMenuProps> = (FooterMenuWithTheme);
+export const FooterMenu: React.ComponentType<FooterMenuProps> = (FooterMenuWithTheme);

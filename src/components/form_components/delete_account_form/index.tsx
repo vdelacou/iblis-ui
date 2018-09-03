@@ -1,7 +1,7 @@
 import { Checkbox, FormControlLabel, Grid, Hidden, Typography, withTheme, WithTheme } from '@material-ui/core';
-import { IblisButton, IblisTextField } from '@src/components/ui_components';
 import * as React from 'react';
 import { Field, InjectedFormProps } from 'redux-form';
+import { IblisButton, IblisTextField } from '../../../components/ui_components';
 import { style } from './style';
 
 export interface DeleteAccountFormValues {
@@ -225,11 +225,11 @@ function validateEmail(value: string, _allValues: DeleteAccountFormValues, props
     return undefined;
 }
 
-const DeleteAccountWithTheme: React.ComponentClass<DeleteAccountFormProps & InjectedFormProps<DeleteAccountFormValues, DeleteAccountFormProps>>
+const DeleteAccountWithTheme: React.ComponentType<DeleteAccountFormProps & InjectedFormProps<DeleteAccountFormValues, DeleteAccountFormProps>>
     = withTheme()(DeleteAccountFormBase);
 
 /* *
  * Form to delete an account.
  * User can leave comments and then to confirm the action the user need checked and then confirm it's email address
  */
-export const DeleteAccountForm: React.ComponentClass<DeleteAccountFormProps & InjectedFormProps<DeleteAccountFormValues, DeleteAccountFormProps>> = (DeleteAccountWithTheme);
+export const DeleteAccountForm: React.ComponentType<DeleteAccountFormProps & InjectedFormProps<DeleteAccountFormValues, DeleteAccountFormProps>> = (DeleteAccountWithTheme);

@@ -1,6 +1,6 @@
 import { AppBar, Grid, ListItemText, MenuItem, MenuList, Paper, Tab, Tabs, Theme, Toolbar, withStyles, WithStyles, WithTheme, withTheme, withWidth } from '@material-ui/core';
 import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
-import { WithWidthProps } from '@material-ui/core/withWidth';
+import { WithWidth } from '@material-ui/core/withWidth';
 import * as React from 'react';
 import { ClassKey, createSytle, style } from './style';
 
@@ -37,7 +37,7 @@ export interface CardMenuProps {
     secondLevelActive?: number;
 }
 
-const CardMenuBase: React.StatelessComponent<CardMenuProps & WithStyles<ClassKey> & WithTheme & WithWidthProps & { children?: React.ReactNode }> = (props) => {
+const CardMenuBase: React.StatelessComponent<CardMenuProps & WithStyles<ClassKey> & WithTheme & WithWidth & { children?: React.ReactNode }> = (props) => {
 
     const { menu, firstLevelActive, secondLevelActive, theme, classes, width, children } = props;
     // we fallback to zero if try to activate unknown menu
@@ -122,13 +122,13 @@ const renderMenuItem = (level: CardMenuLevelProps[], selectedIndex: number) => {
     });
 };
 
-const CardMenuWithStyle: React.ComponentType<CardMenuProps & WithTheme & WithWidthProps> = withStyles(createSytle)(CardMenuBase);
-const CardMenuWithTheme: React.ComponentClass<CardMenuProps & WithWidthProps> = withTheme()(CardMenuWithStyle);
-const CardMenuWithWidth: React.ComponentClass<CardMenuProps> = withWidth()(CardMenuWithTheme);
+const CardMenuWithStyle: React.ComponentType<CardMenuProps & WithWidth> = withStyles(createSytle)(CardMenuBase);
+const CardMenuWithTheme: React.ComponentType<CardMenuProps & WithWidth> = withTheme()(CardMenuWithStyle);
+const CardMenuWithWidth: React.ComponentType<CardMenuProps> = withWidth()(CardMenuWithTheme);
 
 /**
  * A card with menu on two levels.
  * If only one level, the content is directly displayed
  * If two level another vertical menu appears (horizontal on mobile)
  */
-export const CardMenu: React.ComponentClass<CardMenuProps> = (CardMenuWithWidth);
+export const CardMenu: React.ComponentType<CardMenuProps> = (CardMenuWithWidth);

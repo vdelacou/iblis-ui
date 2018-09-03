@@ -1,8 +1,8 @@
-import { ManagedAddSimpleForm, ManagedAddSimpleFormProps, ManagedAddSimpleFormValues } from '@src/components/form_components/managed_simple_add_form';
-import { ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues } from '@src/components/form_components/managed_simple_list_form';
-import { readObjectProp } from '@src/utils';
 import * as React from 'react';
 import { ConfigProps, reduxForm } from 'redux-form';
+import { ManagedAddSimpleForm, ManagedAddSimpleFormProps, ManagedAddSimpleFormValues } from '../../../components/form_components/managed_simple_add_form';
+import { ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues } from '../../../components/form_components/managed_simple_list_form';
+import { readObjectProp } from '../../../utils';
 
 export interface ManagedSimpleFormProps {
     /**

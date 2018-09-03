@@ -1,7 +1,7 @@
 import { Avatar, Grid, Theme, Typography, WithTheme, withTheme } from '@material-ui/core';
 import { capitalize } from '@material-ui/core/utils/helpers';
-import { IblisButton } from '@src/components';
 import * as React from 'react';
+import { IblisButton } from '../../../components';
 import { style } from './style';
 
 export interface AccountCardProps {
@@ -92,10 +92,10 @@ const renderAvatar = (fullName: string, theme: Theme, avatarUrl?: string) => {
     return null;
 };
 
-const AccountCardWithTheme: React.ComponentClass<AccountCardProps> = withTheme()(AccountCardBase);
+const AccountCardWithTheme: React.ComponentType<AccountCardProps> = withTheme()(AccountCardBase);
 /**
  * Component to display an account with an image url, firstName, LastName and email.
  * If no picture display only name and email.
  * If no firstname or lastname then display the email twice.
  */
-export const AccountCard: React.ComponentClass<AccountCardProps> = (AccountCardWithTheme);
+export const AccountCard: React.ComponentType<AccountCardProps> = (AccountCardWithTheme);

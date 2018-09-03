@@ -1,8 +1,8 @@
 import { Grid, IconButton, Menu, MenuItem, Tooltip, Typography, withTheme, WithTheme } from '@material-ui/core';
 import { Cancel, DeleteForever, Done, MoreVert } from '@material-ui/icons';
-import { IblisTextField } from '@src/components';
 import * as React from 'react';
 import { Field, InjectedFormProps } from 'redux-form';
+import { IblisTextField } from '../../../components';
 import { style } from './style';
 
 export interface ManagedSimpleListFormValues {
@@ -298,12 +298,12 @@ class ManagedSimpleListFormBase extends
     }
 }
 
-const ManagedSimpleListFormWithTheme: React.ComponentClass<ManagedSimpleListFormProps & InjectedFormProps<ManagedSimpleListFormValues, ManagedSimpleListFormProps>> =
+const ManagedSimpleListFormWithTheme: React.ComponentType<ManagedSimpleListFormProps & InjectedFormProps<ManagedSimpleListFormValues, ManagedSimpleListFormProps>> =
     withTheme()(ManagedSimpleListFormBase);
 
 /**
  * A simple form for update or delete an entity with only one element
  * If no edit or delete button asked, then the menu is not displayed
  */
-export const ManagedSimpleListForm: React.ComponentClass<ManagedSimpleListFormProps & InjectedFormProps<ManagedSimpleListFormValues, ManagedSimpleListFormProps>> =
+export const ManagedSimpleListForm: React.ComponentType<ManagedSimpleListFormProps & InjectedFormProps<ManagedSimpleListFormValues, ManagedSimpleListFormProps>> =
     (ManagedSimpleListFormWithTheme);

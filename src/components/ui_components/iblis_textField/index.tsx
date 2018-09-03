@@ -110,10 +110,10 @@ const renderError = (touched: boolean, error: object) => {
     }
 };
 
-const IblisButtonWithStyle: React.ComponentType<WithTheme & WrappedFieldProps & IblisTextFieldProps> = withStyles(createSytle)(IblisTextFieldBase);
-const IblisButtonWithTheme: React.ComponentClass<WrappedFieldProps & IblisTextFieldProps> = withTheme()(IblisButtonWithStyle);
+const IblisButtonWithStyle: React.ComponentType<WrappedFieldProps & IblisTextFieldProps> = withStyles(createSytle)(IblisTextFieldBase);
+const IblisButtonWithTheme: React.ComponentType<WrappedFieldProps & IblisTextFieldProps> = withTheme()(IblisButtonWithStyle);
 
 /**
  * Display a text field with border and star if required.
  */
-export const IblisTextField: React.ComponentClass<WrappedFieldProps & IblisTextFieldProps> = (IblisButtonWithTheme);
+export const IblisTextField: React.ComponentType<WrappedFieldProps & IblisTextFieldProps> = (IblisButtonWithTheme);

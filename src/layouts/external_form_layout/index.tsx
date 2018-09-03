@@ -56,9 +56,9 @@ const ExternalFormLayoutBase: React.StatelessComponent<ExternalFormLayoutProps &
     );
 };
 
-const ExternalFormLayoutWithTheme: React.ComponentClass<ExternalFormLayoutProps> = withTheme()(ExternalFormLayoutBase);
+const ExternalFormLayoutWithTheme: React.ComponentType<ExternalFormLayoutProps> = withTheme()(ExternalFormLayoutBase);
 
 /**
  * Layout design to show a form for login or signup
  */
-export const ExternalFormLayout: React.ComponentClass<ExternalFormLayoutProps> = (ExternalFormLayoutWithTheme);
+export const ExternalFormLayout: React.ComponentType<ExternalFormLayoutProps> = (ExternalFormLayoutWithTheme);

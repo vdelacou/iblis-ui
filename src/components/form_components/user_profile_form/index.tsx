@@ -1,7 +1,7 @@
 import { Grid, Hidden, Typography } from '@material-ui/core';
-import { IblisButton, IblisSelectField, IblisTextField } from '@src/components/ui_components';
 import * as React from 'react';
 import { Field, InjectedFormProps } from 'redux-form';
+import { IblisButton, IblisSelectField, IblisTextField } from '../../../components/ui_components';
 
 export interface UserProfileFormValues {
     /**

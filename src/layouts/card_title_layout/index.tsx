@@ -39,10 +39,10 @@ const CardTitleLayoutBase: React.StatelessComponent<CardTitleLayoutProps & WithS
     );
 };
 
-const CardTitleLayoutWithStyle: React.ComponentType<CardTitleLayoutProps & WithTheme> = withStyles(createSytle)(CardTitleLayoutBase);
-const CardTitleLayoutWithTheme: React.ComponentClass<CardTitleLayoutProps> = withTheme()(CardTitleLayoutWithStyle);
+const CardTitleLayoutWithStyle: React.ComponentType<CardTitleLayoutProps> = withStyles(createSytle)(CardTitleLayoutBase);
+const CardTitleLayoutWithTheme: React.ComponentType<CardTitleLayoutProps> = withTheme()(CardTitleLayoutWithStyle);
 
 /**
  * Card with a title
  */
-export const CardTitleLayout: React.ComponentClass<CardTitleLayoutProps> = (CardTitleLayoutWithTheme);
+export const CardTitleLayout: React.ComponentType<CardTitleLayoutProps> = (CardTitleLayoutWithTheme);

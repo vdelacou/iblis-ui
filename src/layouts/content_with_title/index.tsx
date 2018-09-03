@@ -26,9 +26,9 @@ const ContentWithTitleBase: React.StatelessComponent<ContentWithTitleProps & Wit
     );
 };
 
-const ContentWithTitleWithTheme: React.ComponentClass<ContentWithTitleProps> = withTheme()(ContentWithTitleBase);
+const ContentWithTitleWithTheme: React.ComponentType<ContentWithTitleProps> = withTheme()(ContentWithTitleBase);
 
 /**
  * Layout to display a title and content below
  */
-export const ContentWithTitle: React.ComponentClass<ContentWithTitleProps> = (ContentWithTitleWithTheme);
+export const ContentWithTitle: React.ComponentType<ContentWithTitleProps> = (ContentWithTitleWithTheme);
