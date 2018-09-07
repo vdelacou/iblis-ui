@@ -1,4 +1,4 @@
-import { Grid, Hidden, Tooltip, Typography, withTheme, WithTheme } from '@material-ui/core';
+import { Grid, Hidden, Theme, Tooltip, Typography, withTheme, WithTheme } from '@material-ui/core';
 import { Help } from '@material-ui/icons';
 import * as React from 'react';
 import { Field, InjectedFormProps } from 'redux-form';
@@ -122,22 +122,11 @@ const ChangePasswordFormBase: React.StatelessComponent<ChangePasswordFormProps &
                 noValidate={true}
             >
                 {/* old password */}
-                <Grid container={true} >
-                    {renderFormField('password', 'oldPassword', oldPasswordLabel, submitting, [requiredTextField], isLoading)}
-                </Grid>
+                {renderFormField('password', 'oldPassword', oldPasswordLabel, submitting, false, passwordExplainLabel, theme, [requiredTextField], isLoading)}
                 {/* password */}
-                <Grid container={true} >
-                    {renderFormField('password', 'password', passwordLabel, submitting, validatePasswordList, isLoading)}
-                    <Hidden only={'xs'}>
-                        <Tooltip title={passwordExplainLabel} placement={'right'}>
-                            <Help color="action" style={style(theme).icon} />
-                        </Tooltip>
-                    </Hidden>
-                </Grid>
+                {renderFormField('password', 'password', passwordLabel, submitting, true, passwordExplainLabel, theme, validatePasswordList, isLoading)}
                 {/* password Again */}
-                <Grid container={true} >
-                    {renderFormField('password', 'passwordAgain', passwordAgainLabel, submitting, validatePasswordList, isLoading)}
-                </Grid>
+                {renderFormField('password', 'passwordAgain', passwordAgainLabel, submitting, false, passwordExplainLabel, theme, validatePasswordList, isLoading)}
                 {/* button */}
                 <Grid container={true} >
                     <Hidden only={'xs'}>
@@ -154,16 +143,28 @@ const ChangePasswordFormBase: React.StatelessComponent<ChangePasswordFormProps &
                         />
                     </Grid>
                 </Grid>
-            </form>
-        </div>
+            </form>;
+        </div >
     );
 };
 
 function renderFormField(
-    type: string, fieldName: string, label: string, submitting: boolean,
+    type: string, fieldName: string, label: string, submitting: boolean, needHelpPassword: boolean, passwordExplainLabel: string, theme: Theme,
     validateFunction: Array<(value: string, allValues: ChangePasswordFormValues, props: ChangePasswordFormProps) => string | undefined>, isLoading?: boolean) {
+    const renderHelpPassword = () => {
+        if (needHelpPassword) {
+            return (
+                <Hidden only={'xs'}>
+                    <Tooltip title={passwordExplainLabel} placement={'right'}>
+                        <Help color="action" style={style(theme).icon} />
+                    </Tooltip>
+                </Hidden>
+            );
+        }
+        return undefined;
+    };
     return (
-        <div>
+        <Grid container={true} >
             <Grid item={true} sm={3} xs={12}>
                 <Typography variant="body2">
                     {label}
@@ -180,12 +181,13 @@ function renderFormField(
                     fullWidth={true}
                 />
             </Grid>
-        </div>
+            {renderHelpPassword()}
+        </Grid>
     );
 }
 
 function requiredTextField(value: string, _allValues: ChangePasswordFormValues, props: ChangePasswordFormProps) {
-    return value ? undefined : props.requiredErrorLabel;
+    return value && value.trim() !== '' ? undefined : props.requiredErrorLabel;
 }
 
 function validatePassword(value: string, allValues: ChangePasswordFormValues, props: ChangePasswordFormProps) {
