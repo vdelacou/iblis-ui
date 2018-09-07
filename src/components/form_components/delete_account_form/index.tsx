@@ -215,7 +215,7 @@ class DeleteAccountFormBase extends React.PureComponent<
 }
 
 function requiredTextField(value: string, _allValues: DeleteAccountFormValues, props: DeleteAccountFormProps) {
-    return value ? undefined : props.requiredErrorLabel;
+    return value && value.trim() !== '' ? undefined : props.requiredErrorLabel;
 }
 
 function validateEmail(value: string, _allValues: DeleteAccountFormValues, props: DeleteAccountFormProps) {

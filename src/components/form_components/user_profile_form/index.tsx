@@ -213,7 +213,7 @@ const UserProfileFormBase: React.StatelessComponent<UserProfileFormProps & Injec
 };
 
 function requiredTextField(value: string, _allValues: UserProfileFormValues, props: UserProfileFormProps) {
-    return value ? undefined : props.requiredErrorLabel;
+    return value && value.trim() !== '' ? undefined : props.requiredErrorLabel;
 }
 
 function validateEmail(value: string, _allValues: UserProfileFormValues, props: UserProfileFormProps) {

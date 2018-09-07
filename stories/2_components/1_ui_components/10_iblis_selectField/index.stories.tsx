@@ -8,7 +8,7 @@ import { injectProvider, injectTheme } from '../../../decorators';
 const values = [{ id: 'en', value: 'English' }, { id: 'fr', value: 'French' }];
 
 const requiredTextField = (value: string) => {
-  return value ? undefined : 'Required';
+  return value && value.trim() !== '' ? undefined : 'Required';
 };
 
 export default storiesOf('2.1.10 Iblis SelectField', module)

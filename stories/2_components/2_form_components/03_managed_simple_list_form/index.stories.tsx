@@ -7,7 +7,7 @@ import { ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFor
 import { injectProvider, injectTheme } from '../../../decorators';
 
 const requiredTextField = (value: string, _allValues: ManagedSimpleListFormValues, _props: ManagedSimpleListFormProps) => {
-    return value ? undefined : 'Required';
+    return value && value.trim() !== '' ? undefined : 'Required';
 };
 
 export default storiesOf('2.2.3 Managed Simple List Form', module)
