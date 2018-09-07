@@ -15,7 +15,8 @@ export {
     ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues, //
     ProgressBar, ProgressBarProps, //
     UploadAvatar, UploadAvatarProps, //
-    UserProfileForm, UserProfileFormProps, UserProfileFormValues
+    UserProfileForm, UserProfileFormProps, UserProfileFormValues, //
+    WizardForm
 } from './components';
 export { //
     CardMenu, CardMenuLevelProps, CardMenuProps, //

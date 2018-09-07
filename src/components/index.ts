@@ -4,7 +4,8 @@ export { //
     ManagedAddSimpleForm, ManagedAddSimpleFormProps, ManagedAddSimpleFormValues, //
     ManagedSimpleForm, ManagedSimpleFormProps, //
     ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues, //
-    UserProfileForm, UserProfileFormProps, UserProfileFormValues
+    UserProfileForm, UserProfileFormProps, UserProfileFormValues, //
+    WizardForm //
 } from './form_components';
 export {
     AccountCard, AccountCardProps, //

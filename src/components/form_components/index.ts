@@ -4,3 +4,4 @@ export { ManagedAddSimpleForm, ManagedAddSimpleFormProps, ManagedAddSimpleFormVa
 export { ManagedSimpleForm, ManagedSimpleFormProps } from './managed_simple_form';
 export { ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues } from './managed_simple_list_form';
 export { UserProfileForm, UserProfileFormProps, UserProfileFormValues } from './user_profile_form';
+export { WizardForm } from './wizard_form';
