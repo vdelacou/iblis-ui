@@ -93,15 +93,15 @@ const renderSubMenu = (selectedIndex: number, children: React.ReactNode, theme: 
     if (level) {
         return (
             <Grid container={true}>
-                <Grid item={true} style={width === 'xs' || width === 'sm' ? { width: '100%' } : undefined} >
+                <Grid item={true} xs={2} >
                     <MenuList style={width === 'xs' || width === 'sm' ? style(theme).menuContainerSmall : style(theme).menuContainer}>
                         {renderMenuItem(level, selectedIndex)}
                     </MenuList>
                 </Grid>
-                <Grid item={true} style={style(theme).contentContainer}>
+                <Grid item={true} xs={10} style={style(theme).contentContainer}>
                     {children}
-                </Grid>
-            </Grid>
+                </Grid >
+            </Grid >
         );
     } else {
         return (
