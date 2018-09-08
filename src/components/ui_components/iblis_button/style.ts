@@ -6,11 +6,9 @@ export const style = (theme: Theme): Record<string, Partial<CSSProperties>> => {
         textFieldContainer: {
             display: 'flex',
         },
-        buttonWithIcon: {
-            margin: theme.spacing.unit,
-        },
         rightIcon: {
             marginLeft: theme.spacing.unit,
+            height: theme.typography.subheading.fontSize,
         },
     };
 };

@@ -51,7 +51,6 @@ const IblisButtonBase: React.StatelessComponent<IblisButtonProps & WithTheme> = 
             disabled={isLoading ? true : disabled}
             onClick={onClick ? () => onClick() : undefined}
             type={type ? type : undefined}
-            style={icon ? style(theme).buttonWithIcon : undefined}
         >
             {/* When loading we display the button with ... */}
             {isLoading ? (buttonLabel + '...') : buttonLabel}
