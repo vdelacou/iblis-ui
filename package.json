@@ -1,13 +1,15 @@
 {
   "name": "iblis-ui",
-  "version": " 0.0.1-alpha.5",
+  "version": " 0.0.1-alpha.6",
   "license": "Apache-2.0",
   "author": "DELACOURT Vincent <vincent.delacourt@gmail.com>",
   "description": "Beautiful React UI components to be used in a SaaS",
-  "contributors": [{
-    "name": "DELACOURT Vincent",
-    "email": "vincent.delacourt@gmail.com"
-  }],
+  "contributors": [
+    {
+      "name": "DELACOURT Vincent",
+      "email": "vincent.delacourt@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:vdelacou/iblis-ui.git"
@@ -22,11 +24,12 @@
     "build/dist"
   ],
   "dependencies": {
-    "@material-ui/core": "^3.0.1",
+    "@material-ui/core": "^3.0.2",
     "@material-ui/icons": "^3.0.1",
     "iblis-font": "^1.0.7",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "mdi-material-ui": "^5.4.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
     "redux-form": "^7.4.2",
     "typeface-roboto": "^0.0.54"
   },
@@ -36,7 +39,7 @@
     "lint": "tslint src/**/*.ts* --project tsconfig.json",
     "delete": "rimraf build",
     "build": "yarn && yarn delete && yarn lint && yarn tsc",
-    "prepublishOnly": "yarn build && yarn build-storybook",
+    "prepublishOnly": "yarn build",
     "pretest": "yarn build",
     "test": "jest --config jest.config.json",
     "test:watch": "jest --config jest.config.json --watch",
@@ -59,7 +62,7 @@
     "@types/node": "^10.9.4",
     "@types/react": "^16.4.13",
     "@types/react-dom": "^16.0.7",
-    "@types/react-redux": "^6.0.6",
+    "@types/react-redux": "^6.0.7",
     "@types/react-test-renderer": "^16.0.2",
     "@types/redux-form": "^7.4.7",
     "@types/redux-logger": "^3.0.6",
