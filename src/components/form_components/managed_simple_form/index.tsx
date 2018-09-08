@@ -28,12 +28,12 @@ export interface ManagedSimpleFormProps {
     buttonLabelAdd?: string;
     /**
      * To show error if add validation function is not satisfied
-     * @default [(value: string, allValues: ManagedAddSimpleFormValues, props: ManagedAddSimpleFormProps) => {return value ? undefined : 'Required';}]
+     * @default [(value: string, allValues: ManagedAddSimpleFormValues, props: ManagedAddSimpleFormProps) => {return value && value.trim() !== '' ? undefined : 'Required';}]
      */
     validateAddFunctions?: Array<(value: string, allValues: ManagedAddSimpleFormValues, props: ManagedAddSimpleFormProps) => string | undefined>;
     /**
      * To show error if add validation function is not satisfied
-     * @default [(value: string, allValues: ManagedSimpleListFormValues, props: ManagedSimpleListFormProps) => {return value ? undefined : 'Required';}]
+     * @default [(value: string, allValues: ManagedSimpleListFormValues, props: ManagedSimpleListFormProps) => {return value && value.trim() !== '' ? undefined : 'Required';}]
      */
     validateEditFunctions?: Array<(value: string, allValues: ManagedSimpleListFormValues, props: ManagedSimpleListFormProps) => string | undefined>;
     /**
@@ -190,10 +190,10 @@ const ManagedSimpleFormBase: React.StatelessComponent<ManagedSimpleFormProps> = 
 };
 
 const requiredAddTextField = (value: string, _allValues: ManagedAddSimpleFormValues, _props: ManagedAddSimpleFormProps) => {
-    return value ? undefined : 'Required';
+    return value && value.trim() !== '' ? undefined : 'Required';
 };
 const requiredEditTextField = (value: string, _allValues: ManagedSimpleListFormValues, _props: ManagedSimpleListFormProps) => {
-    return value ? undefined : 'Required';
+    return value && value.trim() !== '' ? undefined : 'Required';
 };
 
 /**

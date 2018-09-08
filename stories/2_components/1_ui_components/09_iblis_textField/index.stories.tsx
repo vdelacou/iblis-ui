@@ -6,7 +6,7 @@ import { IblisTextField } from '../../../../src';
 import { injectProvider, injectTheme } from '../../../decorators';
 
 const requiredTextField = (value: string) => {
-  return value ? undefined : 'Required';
+  return value && value.trim() !== '' ? undefined : 'Required';
 };
 
 export default storiesOf('2.1.9 Iblis TextField', module)
