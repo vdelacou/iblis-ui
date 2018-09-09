@@ -12,8 +12,8 @@ export const style = (theme: Theme): Record<string, Partial<CSSProperties>> => {
             fontSize: theme.spacing.unit * 2.5,
         },
         helpButton: {
-            height: theme.spacing.unit * 5,
-            width: theme.spacing.unit * 5,
+            height: theme.spacing.unit * 3.5,
+            width: theme.spacing.unit * 3.5,
         },
         helpTitle: {
             paddingBottom: theme.spacing.unit,
