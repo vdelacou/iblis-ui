@@ -80,7 +80,7 @@ export default storiesOf('1.3 Card With Title Layout', module)
 
     const renderRightComponent = () => {
       return (
-        <Grid container={true} direction={'row'} alignItems={'center'}>
+        <Grid container={true} direction={'row'} alignItems={'center'} spacing={24}>
           <Grid item={true}>
             {renderHelperButton()}
           </Grid>
