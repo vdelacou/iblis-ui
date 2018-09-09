@@ -23,6 +23,7 @@ function loadStories() {
   require('../stories/2_components/1_ui_components/10_iblis_selectField/index.stories');
   require('../stories/2_components/1_ui_components/11_upload_avatar/index.stories');
   // require('../stories/2_components/1_ui_components/12_filter_button/index.stories');
+  require('../stories/2_components/1_ui_components/13_helper_button/index.stories');
 
   // components / form-components
   // require('../stories/2_components/2_form_components/01_managed_simple_form/index.stories');
@@ -31,6 +32,7 @@ function loadStories() {
   // require('../stories/2_components/2_form_components/04_user_profile_form/index.stories');
   require('../stories/2_components/2_form_components/05_change_password_form/index.stories');
   require('../stories/2_components/2_form_components/06_delete_account_form/index.stories');
+  require('../stories/2_components/2_form_components/07_wizard_form/index.stories');
 
 }
 

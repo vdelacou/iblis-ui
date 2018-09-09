@@ -6,6 +6,7 @@ export {
     EmptyPage, //
     FilterButton, FilterButtonMenuProps, FilterButtonProps, //
     FooterMenu, FooterMenuLevelProps, FooterMenuProps, //
+    HelperButton, HelperButtonProps, //
     IblisButton, IblisButtonProps, //
     IblisSelectField, IblisSelectFieldProps, //
     IblisSnackbar, IblisSnackbarProps, IblisTextField, IblisTextFieldProps, //
