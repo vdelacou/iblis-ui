@@ -12,7 +12,7 @@ export {
     IblisSnackbar, IblisSnackbarProps, IblisTextField, IblisTextFieldProps, //
     MainMenu, MainMenuLevelProps, MainMenuProps, //
     ManagedAddSimpleForm, ManagedAddSimpleFormProps, ManagedAddSimpleFormValues, //
-    ManagedSimpleForm, ManagedSimpleFormProps, //
+    ManagedSimpleForm, ManagedSimpleFormData, ManagedSimpleFormProps, //
     ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues, //
     ProgressBar, ProgressBarProps, //
     UploadAvatar, UploadAvatarProps, //

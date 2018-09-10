@@ -4,11 +4,56 @@ import { ManagedAddSimpleForm, ManagedAddSimpleFormProps, ManagedAddSimpleFormVa
 import { ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues } from '../../../components/form_components/managed_simple_list_form';
 import { readObjectProp } from '../../../utils';
 
+export interface ManagedSimpleFormData<T> {
+    /**
+     * The entity to manage
+     */
+    entity: T;
+    /**
+     * To show in the menu the edit button
+     * @default true
+     */
+    hasEdit?: boolean;
+    /**
+     * To show in the menu the deletee button
+     * @default true
+     */
+    hasDelete?: boolean;
+    /**
+     * The text to display on edit menu button
+     * @default Edit
+     */
+    editLabel?: string;
+    /**
+     * The text to display on delete menu button
+     * @default Delete
+     */
+    deleteLabel?: string;
+    /**
+     * The component to display if needed at the left of the form
+     */
+    leftComponent?: React.ReactNode;
+    /**
+     * A list of label and action to add to the menu
+     * @default []
+     */
+    menuAction?: Array<{
+        /**
+         * The label to display on the menu
+         */
+        label: string;
+        /**
+         * The Function to call to when click on menu
+         */
+        action(id: string | number): void;
+    }>;
+}
+
 export interface ManagedSimpleFormProps {
     /**
      * The data to manage
      */
-    data: object[];
+    data: Array<ManagedSimpleFormData<object>>;
     /**
      * The id field name in the data object
      */
@@ -42,38 +87,23 @@ export interface ManagedSimpleFormProps {
      */
     isLoading?: boolean;
     /**
-     * The text to display on edit menu button
-     * @default Edit
-     */
-    editLabel?: string;
-    /**
-     * The text to display on delete menu button
-     * @default Delete
-     */
-    deleteLabel?: string;
-    /**
-     * To show in the menu the edit button
-     * @default true
-     */
-    hasEdit?: boolean;
-    /**
-     * To show in the menu the deletee button
-     * @default true
-     */
-    hasDelete?: boolean;
-    /**
      * The name of the form to use in redux-form, if multiple form in the same component is used, it could be useful to change the name
      * @default ManagedSimpleForm
      */
     formName?: string;
     /**
+     * The height of the component form in the list
+     * @default 60
+     */
+    componentHeight?: number;
+    /**
      * The Function to call to add new entity, you need to give the new data to the components after add it to pass the id
      */
-    addAction(values: object): void;
+    addAction(value: object): void;
     /*
      * The Function to call to edit entity
      */
-    editAction(values: object): void;
+    editAction(value: object): void;
     /*
      * The Function to call to delete entity
      */
@@ -90,11 +120,8 @@ const ManagedSimpleFormBase: React.StatelessComponent<ManagedSimpleFormProps> = 
         validateAddFunctions = [requiredAddTextField],
         validateEditFunctions = [requiredEditTextField],
         isLoading = false,
-        editLabel = 'Edit',
-        deleteLabel = 'Delete',
-        hasEdit = true,
-        hasDelete = true,
         formName = 'ManagedSimpleForm',
+        componentHeight = 60,
     } = props;
 
     const addData = (values: ManagedAddSimpleFormValues) => {
@@ -105,10 +132,10 @@ const ManagedSimpleFormBase: React.StatelessComponent<ManagedSimpleFormProps> = 
     };
 
     const updateData = (values: ManagedSimpleListFormValues) => {
-        const dataConverted: ManagedSimpleListFormValues[] = props.data.map((entity) => {
+        const dataConverted: ManagedSimpleListFormValues[] = props.data.map((value) => {
             return {
-                entityId: readObjectProp(entity, idFieldName),
-                entityName: readObjectProp(entity, displayFieldName),
+                entityId: readObjectProp(value.entity, idFieldName),
+                entityName: readObjectProp(value.entity, displayFieldName),
             };
         });
         const indexObjectToUpdate: number = dataConverted.findIndex((entity) => entity.entityId === values.entityId);
@@ -116,7 +143,7 @@ const ManagedSimpleFormBase: React.StatelessComponent<ManagedSimpleFormProps> = 
         const fieldToUpdate = {
             [displayFieldName]: values.entityName,
         };
-        const objectToUpdate = Object.assign({}, objectFound, fieldToUpdate);
+        const objectToUpdate = Object.assign({}, objectFound.entity, fieldToUpdate);
         props.editAction(objectToUpdate);
     };
 
@@ -126,7 +153,17 @@ const ManagedSimpleFormBase: React.StatelessComponent<ManagedSimpleFormProps> = 
 
     const renderFormList = () => {
 
-        return data.map((entity) => {
+        return data.map((value) => {
+
+            const {
+                entity,
+                editLabel = 'Edit',
+                deleteLabel = 'Delete',
+                hasEdit = true,
+                hasDelete = true,
+                leftComponent,
+                menuAction = [],
+            } = value;
 
             // convert to ManagedSimpleListFormValues
             const dataConverted: ManagedSimpleListFormValues = {
@@ -153,6 +190,9 @@ const ManagedSimpleFormBase: React.StatelessComponent<ManagedSimpleFormProps> = 
                         deleteAction={(id: string | number) => deleteData(id)}
                         hasEdit={hasEdit}
                         hasDelete={hasDelete}
+                        leftComponent={leftComponent}
+                        menuAction={menuAction}
+                        componentHeight={componentHeight}
                     />
                 </div >
             );

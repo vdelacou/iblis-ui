@@ -3,12 +3,11 @@ import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { ManagedSimpleForm, ManagedSimpleFormProps } from '../../../../src';
+import { ManagedSimpleForm, ManagedSimpleFormData, ManagedSimpleFormProps } from '../../../../src';
 import { injectProvider, injectTheme } from '../../../decorators';
-
 interface State {
     isLoading: boolean;
-    data: Array<{ id: string | number; name: string }>;
+    data: Array<ManagedSimpleFormData<{ id: string | number; name: string }>>;
 }
 
 export default storiesOf('2.2.1 Managed Simple Form', module)
@@ -26,8 +25,12 @@ export default storiesOf('2.2.1 Managed Simple Form', module)
     .add('ManagedSimpleForm', withInfo({ source: true })(() => {
 
         const data = [
-            { id: '1', name: 'Marketing' },
-            { id: '2', name: 'Legal' },
+            {
+                entity: { id: '1', name: 'Marketing' },
+            },
+            {
+                entity: { id: '2', name: 'Legal' },
+            },
         ];
 
         const ManagedSimpleFormOwnProps: ManagedSimpleFormProps = {
@@ -49,8 +52,21 @@ export default storiesOf('2.2.1 Managed Simple Form', module)
     .add('Example', (withState(
         {
             data: [
-                { id: '1', name: 'Marketing' },
-                { id: '2', name: 'Legal' },
+                {
+                    entity: { id: '1', name: 'Marketing' },
+                    hasDelete: false,
+                    leftComponent: <img src="https://image.freepik.com/free-photo/cute-cat-picture_1122-449.jpg" style={{ maxHeight: '100%' }} />,
+                    menuAction: [
+                        { label: 'Disabled', action: action('Disabled clicked') },
+                    ],
+                },
+                {
+                    entity: { id: '2', name: 'Legal' },
+                    hasEdit: false,
+                },
+                {
+                    entity: { id: '3', name: 'Sales' },
+                },
             ],
             isLoading: false,
         }
@@ -64,16 +80,16 @@ export default storiesOf('2.2.1 Managed Simple Form', module)
                 const newData = state.data;
                 const entityId = Math.floor(Math.random() * 1000);
                 value.id = entityId;
-                newData.push(value);
+                newData.push({ entity: value });
                 store.set({ data: newData, isLoading: false });
             }, 1000);
         };
         const editAction = (value: { id: string | number; name: string }) => {
             store.set({ isLoading: true });
             setTimeout(() => {
-                const indexObjectToUpdate: number = state.data.findIndex((entity) => entity.id === value.id);
+                const indexObjectToUpdate: number = state.data.findIndex((objectToFind) => objectToFind.entity.id === value.id);
                 const objectToUpdate = state.data[indexObjectToUpdate];
-                objectToUpdate.name = value.name;
+                objectToUpdate.entity.name = value.name;
                 const updateData = state.data;
                 updateData[indexObjectToUpdate] = objectToUpdate;
                 store.set({ data: updateData, isLoading: false });
@@ -82,7 +98,7 @@ export default storiesOf('2.2.1 Managed Simple Form', module)
         const deleteAction = (id: string | number) => {
             store.set({ isLoading: true });
             setTimeout(() => {
-                const indexObjectToDelete: number = state.data.findIndex((entity) => entity.id === id);
+                const indexObjectToDelete: number = state.data.findIndex((objectToFind) => objectToFind.entity.id === id);
                 const deleteData = state.data;
                 deleteData.splice(indexObjectToDelete, 1);
                 store.set({ data: deleteData, isLoading: false });

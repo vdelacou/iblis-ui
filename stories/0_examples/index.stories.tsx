@@ -13,7 +13,8 @@ import {
     DeleteAccountForm, DeleteAccountFormProps, DeleteAccountFormValues, //
     EmptyPage, //
     FooterMenu, FooterMenuLevelProps, FooterMenuProps, IblisSnackbar, //
-    MainLayout, MainMenu, MainMenuProps, ManagedAddSimpleFormProps, ManagedAddSimpleFormValues, ManagedSimpleForm, ManagedSimpleFormProps, UploadAvatar, UserProfileForm, //
+    MainLayout, MainMenu, MainMenuProps, ManagedAddSimpleFormProps, ManagedAddSimpleFormValues, ManagedSimpleForm, ManagedSimpleFormData, ManagedSimpleFormProps, //
+    UploadAvatar, UserProfileForm, //
     UserProfileFormProps, UserProfileFormValues
 } from '../../src';
 import { injectProvider, injectThemeWithoutLimitWidth } from '../decorators';
@@ -30,15 +31,9 @@ interface State {
         avatarFileId: string | number;
         updateUserisLoading: boolean;
     };
-    categories: [{
-        id: string | number;
-        name: string;
-    }];
+    categories: Array<ManagedSimpleFormData<{ id: string | number; name: string }>>;
     categoriesLoading: boolean;
-    accountMembers: [{
-        id: string | number;
-        email: string;
-    }];
+    accountMembers: Array<ManagedSimpleFormData<{ id: string | number; email: string }>>;
     accountMembersLoading: boolean;
     accountLevelActive: number;
     errorMessage: string;
@@ -74,10 +69,10 @@ export default storiesOf('0 Examples', module)
                 updateUserisLoading: false,
             },
             categories: [
-                { id: '1', name: 'Utilities' },
-                { id: '2', name: 'Travel' },
-                { id: '3', name: 'Rent' },
-                { id: '4', name: 'Office supplies' },
+                { entity: { id: '1', name: 'Utilities' } },
+                { entity: { id: '2', name: 'Travel' } },
+                { entity: { id: '3', name: 'Rent' } },
+                { entity: { id: '4', name: 'Office supplies' } },
             ],
             categoriesLoading: false,
             accountMembers: [],
@@ -471,16 +466,16 @@ const renderAccountMenbers = (store: Store<State>) => {
             const newData = store.state.accountMembers;
             const entityId = Math.floor(Math.random() * 1000);
             value.id = entityId;
-            newData.push(value);
+            newData.push({ entity: value, hasEdit: false });
             store.set({ accountMembers: newData, accountMembersLoading: false });
         }, 1000);
     };
     const editAction = (value: { id: string | number; email: string }) => {
         store.set({ accountMembersLoading: true });
         setTimeout(() => {
-            const indexObjectToUpdate: number = store.state.accountMembers.findIndex((entity) => entity.id === value.id);
+            const indexObjectToUpdate: number = store.state.accountMembers.findIndex((objectToFind) => objectToFind.entity.id === value.id);
             const objectToUpdate = store.state.accountMembers[indexObjectToUpdate];
-            objectToUpdate.email = value.email;
+            objectToUpdate.entity.email = value.email;
             const updateData = store.state.accountMembers;
             updateData[indexObjectToUpdate] = objectToUpdate;
             store.set({ accountMembers: updateData, accountMembersLoading: false });
@@ -489,7 +484,7 @@ const renderAccountMenbers = (store: Store<State>) => {
     const deleteAction = (id: string | number) => {
         store.set({ accountMembersLoading: true });
         setTimeout(() => {
-            const indexObjectToDelete: number = store.state.accountMembers.findIndex((entity) => entity.id === id);
+            const indexObjectToDelete: number = store.state.accountMembers.findIndex((objectToFind) => objectToFind.entity.id === id);
             const deleteData = store.state.accountMembers;
             deleteData.splice(indexObjectToDelete, 1);
             store.set({ accountMembers: deleteData, accountMembersLoading: false });
@@ -513,7 +508,6 @@ const renderAccountMenbers = (store: Store<State>) => {
         deleteAction: (id) => deleteAction(id),
         isLoading: store.state.accountMembersLoading,
         buttonLabelAdd: 'Create',
-        hasEdit: false,
         validateAddFunctions: [validateEmail],
     };
 
@@ -535,16 +529,16 @@ const renderCategory = (store: Store<State>) => {
             const newData = store.state.categories;
             const entityId = Math.floor(Math.random() * 1000);
             value.id = entityId;
-            newData.push(value);
+            newData.push({ entity: value });
             store.set({ categories: newData, categoriesLoading: false });
         }, 1000);
     };
     const editAction = (value: { id: string | number; name: string }) => {
         store.set({ categoriesLoading: true });
         setTimeout(() => {
-            const indexObjectToUpdate: number = store.state.categories.findIndex((entity) => entity.id === value.id);
+            const indexObjectToUpdate: number = store.state.categories.findIndex((objectToFind) => objectToFind.entity.id === value.id);
             const objectToUpdate = store.state.categories[indexObjectToUpdate];
-            objectToUpdate.name = value.name;
+            objectToUpdate.entity.name = value.name;
             const updateData = store.state.categories;
             updateData[indexObjectToUpdate] = objectToUpdate;
             store.set({ categories: updateData, categoriesLoading: false });
@@ -553,7 +547,7 @@ const renderCategory = (store: Store<State>) => {
     const deleteAction = (id: string | number) => {
         store.set({ categoriesLoading: true });
         setTimeout(() => {
-            const indexObjectToDelete: number = store.state.categories.findIndex((entity) => entity.id === id);
+            const indexObjectToDelete: number = store.state.categories.findIndex((objectToFind) => objectToFind.entity.id === id);
             const deleteData = store.state.categories;
             deleteData.splice(indexObjectToDelete, 1);
             store.set({ categories: deleteData, categoriesLoading: false });

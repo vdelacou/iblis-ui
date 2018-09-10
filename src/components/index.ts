@@ -2,7 +2,7 @@ export { //
     ChangePasswordForm, ChangePasswordFormProps, ChangePasswordFormValues, //
     DeleteAccountForm, DeleteAccountFormProps, DeleteAccountFormValues, //
     ManagedAddSimpleForm, ManagedAddSimpleFormProps, ManagedAddSimpleFormValues, //
-    ManagedSimpleForm, ManagedSimpleFormProps, //
+    ManagedSimpleForm, ManagedSimpleFormData, ManagedSimpleFormProps, //
     ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues, //
     UserProfileForm, UserProfileFormProps, UserProfileFormValues, //
     WizardForm //
