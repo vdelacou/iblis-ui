@@ -40,7 +40,7 @@
                 "objects": "always",
                 "arrays": "always",
                 "Functions": "never",
-                "typeLiterals": "ignore"
+                "typeLiterals": "ignore",
             },
             "esSpecCompliant": true
         }],
