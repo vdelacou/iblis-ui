@@ -149,7 +149,7 @@ class ManagedSimpleListFormBase extends
 
     renderMenu = (
         editLabel: string, deleteLabel: string, hasEdit: boolean, hasDelete: boolean,
-        optionalMenu: Array<{ label: string; action(id: string | number): void }>, element?: HTMLElement) => {
+        optionalMenu: Array<{ label: string; action(id: string | number): void }> = [], element?: HTMLElement) => {
         return (
             <Menu
                 elevation={1}
@@ -191,8 +191,8 @@ class ManagedSimpleListFormBase extends
         }
     }
 
-    renderOptionalMenuItem = (optionalMenu: Array<{ label: string; action(id: string | number): void }>) => {
-        if (optionalMenu && optionalMenu.length !== 0) {
+    renderOptionalMenuItem = (optionalMenu: Array<{ label: string; action(id: string | number): void }> = []) => {
+        if (optionalMenu.length !== 0) {
             return optionalMenu.map((menu, index) => {
                 if (this.props.initValues && this.props.initValues.entityId) {
                     const id = this.props.initValues.entityId;
@@ -247,7 +247,7 @@ class ManagedSimpleListFormBase extends
     renderIconMenu = (
         editItem: boolean, deleteItem: boolean, //
         editConfirmLabel: string, editCancelLabel: string, deleteConfirmLabel: string, deleteCancelLabel: string, //
-        isLoading: boolean, hasEdit: boolean, hasDelete: boolean,
+        isLoading: boolean, hasEdit: boolean, hasDelete: boolean, optionalMenu: Array<{ label: string; action(id: string | number): void }> = [],
     ) => {
         if (deleteItem) {
             return (
@@ -294,7 +294,7 @@ class ManagedSimpleListFormBase extends
                 </div>
             );
         }
-        if ((hasEdit || hasDelete)) {
+        if (hasEdit || hasDelete || (optionalMenu.length > 0)) {
             return (
                 <div >
                     <IconButton
@@ -329,7 +329,7 @@ class ManagedSimpleListFormBase extends
                 >
                     <Grid container={true} alignItems={'center'}>
                         <Grid item={true} xs={8} sm={10} >
-                            <div style={!hasEdit ? style(theme, componentHeight).mainContainerEdit : style(theme, componentHeight).mainContainer}>
+                            <div style={style(theme, componentHeight).mainContainer}>
                                 <div
                                     style={leftComponent ? style(theme, componentHeight).leftComponentContainerPresent : style(theme, componentHeight).leftComponentContainer}
                                 >
@@ -343,7 +343,7 @@ class ManagedSimpleListFormBase extends
                             </div>
                         </Grid>
                         <Grid item={true} xs={4} sm={2} style={style(this.props.theme).iconMenuContainer}>
-                            {this.renderIconMenu(editItem, deleteItem, editConfirmLabel, editCancelLabel, deleteConfirmLabel, deleteCancelLabel, isLoading, hasEdit, hasDelete)}
+                            {this.renderIconMenu(editItem, deleteItem, editConfirmLabel, editCancelLabel, deleteConfirmLabel, deleteCancelLabel, isLoading, hasEdit, hasDelete, menuAction)}
                         </Grid>
                     </Grid>
                 </form>
