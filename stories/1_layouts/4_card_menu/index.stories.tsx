@@ -51,7 +51,7 @@ export default storiesOf('1.4 Card Menu Layout', module)
   .add('Example',
     withState(
       {
-        firstLevelActive: 0,
+        firstLevelActive: 1,
         secondLevelActive: 0,
       }
     )((story: any) => {
