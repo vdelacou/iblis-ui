@@ -36,7 +36,7 @@ const FilterButtonBase: React.StatelessComponent<FilterButtonProps & WithTheme> 
     const activeFilter = listFilter.length > activeIndex ? activeIndex : 0;
 
     return (
-        <Grid item={true} direction={'row'} >
+        <Grid item={true} >
             {renderButtonFilter(listFilter, activeFilter, theme)}
         </Grid >
     );
