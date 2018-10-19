@@ -8,4 +8,5 @@ export { ManagedSimpleForm, ManagedSimpleFormData, ManagedSimpleFormProps } from
 export { ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues } from './managed_simple_list_form';
 export { ResetPasswordForm, ResetPasswordFormProps, ResetPasswordFormValues } from './reset_password_form';
 export { SignupForm, SignupFormProps, SignupFormValues } from './signup_form';
+export { StripeForm, StripeFormProps, StripeFormValues } from './stripe_form';
 export { UserProfileForm, UserProfileFormProps, UserProfileFormValues } from './user_profile_form';

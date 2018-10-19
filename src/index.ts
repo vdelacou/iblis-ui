@@ -20,6 +20,7 @@ export {
     ProgressBar, ProgressBarProps, //
     ResetPasswordForm, ResetPasswordFormProps, ResetPasswordFormValues, //
     SignupForm, SignupFormProps, SignupFormValues, //
+    StripeForm, StripeFormProps, StripeFormValues, //
     UploadAvatar, UploadAvatarProps, //
     UserProfileForm, UserProfileFormProps, UserProfileFormValues //
 } from './components';

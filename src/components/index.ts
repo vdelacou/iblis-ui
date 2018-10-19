@@ -9,6 +9,7 @@ export {
     ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues, //
     ResetPasswordForm, ResetPasswordFormProps, ResetPasswordFormValues, //
     SignupForm, SignupFormProps, SignupFormValues, //
+    StripeForm, StripeFormProps, StripeFormValues, //
     UserProfileForm, UserProfileFormProps, UserProfileFormValues //
 } from './form_components';
 export {

@@ -169,6 +169,7 @@ const SignupFormBase: React.StatelessComponent<SignupFormProps & InjectedFormPro
                         />
                     </Grid>
                 </Grid>
+                <Grid container={true} >&nbsp;</Grid>
                 <Grid container={true} justify="space-between" >
                     {/* back */}
                     <Grid item={true} >

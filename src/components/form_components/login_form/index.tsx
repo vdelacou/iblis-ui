@@ -116,7 +116,7 @@ const LoginFormBase: React.StatelessComponent<LoginFormProps & InjectedFormProps
                     </Grid>
                 </Grid>
                 {/* forget password */}
-                <Grid container={true} >
+                <Grid container={true} justify="flex-end" >
                     <Grid item={true} xs={12} >
                         <Typography align="center">
                             <ButtonBase onClick={() => forgetPassword()} disabled={submitting || isLoading}>
@@ -125,6 +125,7 @@ const LoginFormBase: React.StatelessComponent<LoginFormProps & InjectedFormProps
                         </Typography>
                     </Grid>
                 </Grid>
+                <Grid container={true} >&nbsp;</Grid>
                 <Grid container={true} justify="space-between" >
                     {/* create account */}
                     <Grid item={true} >

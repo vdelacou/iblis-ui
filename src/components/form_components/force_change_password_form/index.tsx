@@ -113,6 +113,7 @@ const ForceForceChangePasswordFormBase:
                     {renderFormField('password', 'password', passwordLabel, submitting, validatePasswordList, isLoading)}
                     {/* password Again */}
                     {renderFormField('password', 'passwordAgain', passwordAgainLabel, submitting, validatePasswordList, isLoading)}
+                    <Grid container={true} >&nbsp;</Grid>
                     {/* button */}
                     <Grid container={true} justify="flex-end" >
                         <Grid item={true} >

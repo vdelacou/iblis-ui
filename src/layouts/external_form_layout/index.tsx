@@ -32,7 +32,7 @@ const ExternalFormLayoutBase: React.StatelessComponent<ExternalFormLayoutProps &
                 <Typography variant="headline" align="center" color="inherit" style={style(theme).titleTypo} >
                     {title}
                 </Typography>
-                <Paper >
+                <Paper  style={style(theme).paper} >
                     <AppBar position="static" color="default">
                         <Tabs
                             value={-1}

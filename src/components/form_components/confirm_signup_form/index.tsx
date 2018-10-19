@@ -106,7 +106,7 @@ const ConfirmSignupFormBase: React.StatelessComponent<ConfirmSignupFormProps & I
                     </Grid>
                 </Grid>
                 {/* forget code */}
-                <Grid container={true} >
+                <Grid container={true} justify="flex-end">
                     <Grid item={true} xs={12} >
                         <Typography align="center">
                             <ButtonBase onClick={() => resendCode()} disabled={submitting || isLoading}>
@@ -115,6 +115,7 @@ const ConfirmSignupFormBase: React.StatelessComponent<ConfirmSignupFormProps & I
                         </Typography>
                     </Grid>
                 </Grid>
+                <Grid container={true} >&nbsp;</Grid>
                 <Grid container={true} justify="space-between" >
                     {/* create account */}
                     <Grid item={true} >

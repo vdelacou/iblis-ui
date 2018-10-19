@@ -73,6 +73,7 @@ const ResetPasswordFormBase: React.StatelessComponent<ResetPasswordFormProps & I
                         />
                     </Grid>
                 </Grid>
+                <Grid container={true} >&nbsp;</Grid>
                 <Grid container={true} justify="space-between" >
                     {/* back */}
                     <Grid item={true} >
