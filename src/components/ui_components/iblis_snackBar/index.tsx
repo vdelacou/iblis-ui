@@ -3,13 +3,13 @@ import * as React from 'react';
 
 export interface IblisSnackbarProps {
     /**
-     * The label to display in the center of the button
+     * If need to display the error
      */
     isError: boolean;
     /**
      * The label to display in the center of the button
      */
-    errorText: string;
+    errorText?: string;
     /**
      * The number of milliseconds to wait before automatically calling the hide Function.
      * @default 3000

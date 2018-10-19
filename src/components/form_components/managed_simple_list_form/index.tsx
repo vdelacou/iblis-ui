@@ -94,6 +94,11 @@ export interface ManagedSimpleListFormProps {
          */
         label: string;
         /**
+         * If the menu is disabled
+         * @default false
+         */
+        disabled?: boolean;
+        /**
          * The Function to call to when click on menu
          */
         action(id: string | number): void;
@@ -149,7 +154,7 @@ class ManagedSimpleListFormBase extends
 
     renderMenu = (
         editLabel: string, deleteLabel: string, hasEdit: boolean, hasDelete: boolean,
-        optionalMenu: Array<{ label: string; action(id: string | number): void }> = [], element?: HTMLElement) => {
+        optionalMenu: Array<{ label: string; disabled?: boolean; action(id: string | number): void }> = [], element?: HTMLElement) => {
         return (
             <Menu
                 elevation={1}
@@ -191,13 +196,13 @@ class ManagedSimpleListFormBase extends
         }
     }
 
-    renderOptionalMenuItem = (optionalMenu: Array<{ label: string; action(id: string | number): void }> = []) => {
+    renderOptionalMenuItem = (optionalMenu: Array<{ label: string; disabled?: boolean; action(id: string | number): void }> = []) => {
         if (optionalMenu.length !== 0) {
             return optionalMenu.map((menu, index) => {
                 if (this.props.initValues && this.props.initValues.entityId) {
                     const id = this.props.initValues.entityId;
                     return (
-                        <MenuItem key={index} onClick={() => menu.action(id)}>
+                        <MenuItem disabled={menu.disabled} key={index} onClick={() => menu.action(id)}>
                             {menu.label}
                         </MenuItem>
                     );
@@ -247,7 +252,7 @@ class ManagedSimpleListFormBase extends
     renderIconMenu = (
         editItem: boolean, deleteItem: boolean, //
         editConfirmLabel: string, editCancelLabel: string, deleteConfirmLabel: string, deleteCancelLabel: string, //
-        isLoading: boolean, hasEdit: boolean, hasDelete: boolean, optionalMenu: Array<{ label: string; action(id: string | number): void }> = [],
+        isLoading: boolean, hasEdit: boolean, hasDelete: boolean, optionalMenu: Array<{ label: string; disabled?: boolean; action(id: string | number): void }> = [],
     ) => {
         if (deleteItem) {
             return (
@@ -313,9 +318,12 @@ class ManagedSimpleListFormBase extends
 
         const {
             editLabel = 'Edit', deleteLabel = 'Delete', confirmDeleteLabel = 'Do you confirm you want to delete this?', leftComponent, componentHeight = 60,
-            editConfirmLabel = 'Edit', editCancelLabel = 'Cancel', deleteConfirmLabel = 'Delete', deleteCancelLabel = 'Cancel', isLoading = false,
-            menuAction = [], hasEdit = true, hasDelete = true, theme }
+            isLoading = false, menuAction = [], hasEdit = true, hasDelete = true, theme }
             = this.props;
+        const editCfrmLbl = this.props.editConfirmLabel ? this.props.editConfirmLabel : 'Edit';
+        const editCncLbl = this.props.editCancelLabel ? this.props.editCancelLabel : 'Cancel';
+        const dltCfrmLbl = this.props.deleteConfirmLabel ? this.props.deleteConfirmLabel : 'Delete';
+        const dltCncLbl = this.props.deleteCancelLabel ? this.props.deleteCancelLabel : 'Cancel';
         const { editItem, deleteItem, element } = this.state;
 
         if (this.props.initValues && !this.props.initialized) {
@@ -343,7 +351,7 @@ class ManagedSimpleListFormBase extends
                             </div>
                         </Grid>
                         <Grid item={true} xs={4} sm={2} style={style(this.props.theme).iconMenuContainer}>
-                            {this.renderIconMenu(editItem, deleteItem, editConfirmLabel, editCancelLabel, deleteConfirmLabel, deleteCancelLabel, isLoading, hasEdit, hasDelete, menuAction)}
+                            {this.renderIconMenu(editItem, deleteItem, editCfrmLbl, editCncLbl, dltCfrmLbl, dltCncLbl, isLoading, hasEdit, hasDelete, menuAction)}
                         </Grid>
                     </Grid>
                 </form>

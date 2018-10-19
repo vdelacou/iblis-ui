@@ -36,7 +36,7 @@ export default storiesOf('2.2.4 User Profile Form', module)
         // configure the form
         function config(): ConfigProps<UserProfileFormValues, UserProfileFormProps> {
             const configForm: ConfigProps<UserProfileFormValues, UserProfileFormProps> = {
-                form: 'form',
+                form: 'UserProfileForm',
             };
             return configForm;
         }
@@ -97,7 +97,7 @@ export default storiesOf('2.2.4 User Profile Form', module)
         // configure the form
         function config(): ConfigProps<UserProfileFormValues, UserProfileFormProps> {
             const configForm: ConfigProps<UserProfileFormValues, UserProfileFormProps> = {
-                form: 'form',
+                form: 'UserProfileForm',
             };
             return configForm;
         }

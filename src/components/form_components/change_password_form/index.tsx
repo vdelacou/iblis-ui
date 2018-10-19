@@ -143,7 +143,7 @@ const ChangePasswordFormBase: React.StatelessComponent<ChangePasswordFormProps &
                         />
                     </Grid>
                 </Grid>
-            </form>;
+            </form>
         </div >
     );
 };

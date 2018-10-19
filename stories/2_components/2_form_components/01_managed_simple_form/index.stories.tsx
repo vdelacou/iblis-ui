@@ -73,11 +73,20 @@ export default storiesOf('2.2.1 Managed Simple Form', module)
                     hasDelete: false,
                 },
                 {
-                    entity: { id: '5', name: 'Operation' },
+                    entity: { id: '5', name: 'Operations' },
                     hasEdit: false,
                     hasDelete: false,
                     menuAction: [
                         { label: 'Enabled', action: action('Enabled clicked') },
+                    ],
+                },
+                {
+                    entity: { id: '6', name: 'Marketing' },
+                    hasEdit: false,
+                    hasDelete: false,
+                    menuAction: [
+                        { label: 'Up', action: action('Enabled clicked') },
+                        { label: 'Down', disabled: true, action: action('Enabled clicked') },
                     ],
                 },
             ],

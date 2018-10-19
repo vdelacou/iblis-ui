@@ -27,4 +27,8 @@ export * from './2_components/2_form_components/03_managed_simple_list_form/inde
 export * from './2_components/2_form_components/04_user_profile_form/index.stories';
 export * from './2_components/2_form_components/05_change_password_form/index.stories';
 export * from './2_components/2_form_components/06_delete_account_form/index.stories';
-export * from './2_components/2_form_components/07_wizard_form/index.stories';
+export * from './2_components/2_form_components/07_login_form/index.stories';
+export * from './2_components/2_form_components/08_signup_form/index.stories';
+export * from './2_components/2_form_components/09_confirm_signup_form/index.stories';
+export * from './2_components/2_form_components/10_force_change_password_form/index.stories';
+export * from './2_components/2_form_components/11_reset_password_form/index.stories';

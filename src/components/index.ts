@@ -1,11 +1,15 @@
-export { //
+export {
     ChangePasswordForm, ChangePasswordFormProps, ChangePasswordFormValues, //
+    ConfirmSignupForm, ConfirmSignupFormProps, ConfirmSignupFormValues, //
     DeleteAccountForm, DeleteAccountFormProps, DeleteAccountFormValues, //
+    ForceForceChangePasswordForm, ForceForceChangePasswordFormProps, ForceForceChangePasswordFormValues, //
+    LoginForm, LoginFormProps, LoginFormValues, //
     ManagedAddSimpleForm, ManagedAddSimpleFormProps, ManagedAddSimpleFormValues, //
     ManagedSimpleForm, ManagedSimpleFormData, ManagedSimpleFormProps, //
     ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues, //
-    UserProfileForm, UserProfileFormProps, UserProfileFormValues, //
-    WizardForm //
+    ResetPasswordForm, ResetPasswordFormProps, ResetPasswordFormValues, //
+    SignupForm, SignupFormProps, SignupFormValues, //
+    UserProfileForm, UserProfileFormProps, UserProfileFormValues //
 } from './form_components';
 export {
     AccountCard, AccountCardProps, //

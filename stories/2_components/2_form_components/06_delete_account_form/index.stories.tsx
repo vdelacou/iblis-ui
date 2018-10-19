@@ -26,7 +26,7 @@ export default storiesOf('2.2.6 Delete Account Form', module)
                 // configure the form
                 function config(): ConfigProps<DeleteAccountFormValues, DeleteAccountFormProps> {
                     const configForm: ConfigProps<DeleteAccountFormValues, DeleteAccountFormProps> = {
-                        form: 'form',
+                        form: 'DeleteAccountForm',
                     };
                     return configForm;
                 }

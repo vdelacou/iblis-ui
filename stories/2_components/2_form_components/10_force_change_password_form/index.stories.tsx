@@ -3,10 +3,10 @@ import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { ConfigProps, reduxForm } from 'redux-form';
-import { ChangePasswordForm, ChangePasswordFormProps, ChangePasswordFormValues } from '../../../../src';
+import { ForceForceChangePasswordForm, ForceForceChangePasswordFormProps, ForceForceChangePasswordFormValues } from '../../../../src';
 import { injectProvider, injectTheme } from '../../../decorators';
 
-export default storiesOf('2.2.5 Change Password Form', module)
+export default storiesOf('2.2.10 ForceForceChangePasswordForm', module)
     .addDecorator((story: RenderFunction) => {
         return (
             injectTheme(story)
@@ -18,23 +18,21 @@ export default storiesOf('2.2.5 Change Password Form', module)
         );
     })
     //
-    .add('ChangePasswordForm', withInfo({ source: true })(() => {
+    .add('ForceForceChangePasswordForm', withInfo({ source: true })(() => {
         // configure the form
-        function config(): ConfigProps<ChangePasswordFormValues, ChangePasswordFormProps> {
-            const configForm: ConfigProps<ChangePasswordFormValues, ChangePasswordFormProps> = {
-                form: 'ChangePasswordForm',
+        function config(): ConfigProps<ForceForceChangePasswordFormValues, ForceForceChangePasswordFormProps> {
+            const configForm: ConfigProps<ForceForceChangePasswordFormValues, ForceForceChangePasswordFormProps> = {
+                form: 'ForceForceChangePasswordForm',
             };
             return configForm;
         }
         // connect the form
-        const ConnectedForm = reduxForm(config())(ChangePasswordForm);
+        const ConnectedForm = reduxForm(config())(ForceForceChangePasswordForm);
         return (
             <ConnectedForm
-                oldPasswordLabel={'Enter old password'}
                 passwordLabel={'Choose a new password'}
                 passwordAgainLabel={'Re-enter new password'}
                 buttonLabelConfirm={'Change Password'}
-                passwordExplainLabel={'8 or more characters, 1 lower case, 1 upper case, 1 number'}
                 minimumPasswordLength={8}
                 maximumPasswordLength={128}
                 passwordLengthErrorLabel={'Password must be 8 characters minimum'}

@@ -1,4 +1,4 @@
-import { ClickAwayListener, Grid, IconButton, Paper, Popper, Typography, WithTheme, withTheme } from '@material-ui/core';
+import { Grid, IconButton, Paper, Popper, Typography, WithTheme, withTheme } from '@material-ui/core';
 import { HelpCircle } from 'mdi-material-ui';
 import * as React from 'react';
 import { style } from './style';
@@ -22,24 +22,49 @@ class CardTitleState {
      * open the help menu
      */
     readonly open: boolean = false;
+    /**
+     * open the help menu on Hober
+     */
+    readonly openHover: boolean = false;
 }
 class HelperButtonBase extends React.PureComponent<HelperButtonProps & WithTheme, CardTitleState> {
 
     readonly state = new CardTitleState();
 
-    openHelpMenu = (event: React.MouseEvent<HTMLElement>) => {
+    toggleHelpMenu = (event: React.MouseEvent<HTMLElement>) => {
         const { currentTarget } = event;
-        this.setState((prevState) => ({
-            anchorEl: currentTarget,
-            open: !prevState.open,
-        }));
+        this.setState((prevState) => {
+            if (prevState.open) {
+                return ({
+                    anchorEl: null,
+                    open: false,
+                });
+            } else {
+                return ({
+                    anchorEl: currentTarget,
+                    open: true,
+                });
+            }
+        });
     }
 
-    handleClickAway = () => {
-        this.setState(() => ({
-            anchorEl: null,
-            open: false,
-        }));
+    openHelpMenuHover = (event: React.MouseEvent<HTMLElement>) => {
+        if (!this.state.open) {
+            const { currentTarget } = event;
+            this.setState(() => ({
+                anchorEl: currentTarget,
+                openHover: true,
+            }));
+        }
+    }
+
+    closeHelpMenuHover = () => {
+        if (!this.state.open) {
+            this.setState(() => ({
+                anchorEl: null,
+                openHover: false,
+            }));
+        }
     }
 
     renderMenuHelp = (): React.ReactNode => {
@@ -74,15 +99,18 @@ class HelperButtonBase extends React.PureComponent<HelperButtonProps & WithTheme
 
         return (
             <div>
-                <ClickAwayListener onClickAway={() => this.handleClickAway()}>
-                    <IconButton onClick={(event) => this.openHelpMenu(event)} style={style(theme).helpButton}>
-                        <HelpCircle style={style(theme).helpIcon} />
-                    </IconButton>
-                </ClickAwayListener>
+                <IconButton
+                    onPointerEnter={(event) => this.openHelpMenuHover(event)}
+                    onPointerLeave={() => this.closeHelpMenuHover()}
+                    onClick={(event) => this.toggleHelpMenu(event)}
+                    style={style(theme).helpButton}
+                >
+                    <HelpCircle color={this.state.open ? 'primary' : 'default'} style={style(theme).helpIcon} />
+                </IconButton>
                 <Popper
                     id={id}
                     placement="bottom-end"
-                    open={this.state.open}
+                    open={this.state.open || this.state.openHover}
                     anchorEl={this.state.anchorEl}
                     modifiers={popperModifiers}
                 >
