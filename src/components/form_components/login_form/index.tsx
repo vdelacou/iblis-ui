@@ -98,6 +98,7 @@ const LoginFormBase: React.StatelessComponent<LoginFormProps & InjectedFormProps
                             validate={[requiredTextField, validateEmail]}
                             fullWidth={true}
                             placeholder={emailLabel}
+                            required={true}
                         />
                     </Grid>
                 </Grid>
@@ -112,12 +113,13 @@ const LoginFormBase: React.StatelessComponent<LoginFormProps & InjectedFormProps
                             validate={[requiredTextField, validateLengthPassword]}
                             fullWidth={true}
                             placeholder={passwordLabel}
+                            required={true}
                         />
                     </Grid>
                 </Grid>
                 {/* forget password */}
                 <Grid container={true} justify="flex-end" >
-                    <Grid item={true} xs={12} >
+                    <Grid item={true}>
                         <Typography align="center">
                             <ButtonBase onClick={() => forgetPassword()} disabled={submitting || isLoading}>
                                 {forgetPasswordLabel}

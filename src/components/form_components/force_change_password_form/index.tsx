@@ -144,6 +144,7 @@ function renderFormField(
                     validate={validateFunction}
                     fullWidth={true}
                     placeholder={label}
+                    required={true}
                 />
             </Grid>
         </Grid>

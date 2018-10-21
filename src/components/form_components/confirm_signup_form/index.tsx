@@ -82,12 +82,13 @@ const ConfirmSignupFormBase: React.StatelessComponent<ConfirmSignupFormProps & I
                 <Grid container={true} >
                     <Grid item={true} xs={12}>
                         <Field
-                            type="text"
+                            type="hidden"
                             name="email"
                             component={IblisTextField}
                             disabled={true}
                             validate={[requiredTextField]}
                             fullWidth={true}
+                            required={true}
                         />
                     </Grid>
                 </Grid>
@@ -95,19 +96,20 @@ const ConfirmSignupFormBase: React.StatelessComponent<ConfirmSignupFormProps & I
                 <Grid container={true} >
                     <Grid item={true} xs={12}>
                         <Field
-                            type="code"
+                            type="number"
                             name="code"
                             component={IblisTextField}
                             disabled={submitting || isLoading}
                             validate={[requiredTextField]}
                             fullWidth={true}
                             placeholder={codeLabel}
+                            required={true}
                         />
                     </Grid>
                 </Grid>
                 {/* forget code */}
                 <Grid container={true} justify="flex-end">
-                    <Grid item={true} xs={12} >
+                    <Grid item={true}>
                         <Typography align="center">
                             <ButtonBase onClick={() => resendCode()} disabled={submitting || isLoading}>
                                 {resendCodeLabel}

@@ -70,6 +70,7 @@ const ResetPasswordFormBase: React.StatelessComponent<ResetPasswordFormProps & I
                             validate={[requiredTextField, validateEmail]}
                             fullWidth={true}
                             placeholder={emailLabel}
+                            required={true}
                         />
                     </Grid>
                 </Grid>

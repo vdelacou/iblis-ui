@@ -138,6 +138,7 @@ const SignupFormBase: React.StatelessComponent<SignupFormProps & InjectedFormPro
                             validate={[requiredTextField, validateEmail]}
                             fullWidth={true}
                             placeholder={emailLabel}
+                            required={true}
                         />
                     </Grid>
                 </Grid>
@@ -152,6 +153,7 @@ const SignupFormBase: React.StatelessComponent<SignupFormProps & InjectedFormPro
                             validate={validatePasswordList}
                             fullWidth={true}
                             placeholder={passwordLabel}
+                            required={true}
                         />
                     </Grid>
                 </Grid>
@@ -166,6 +168,7 @@ const SignupFormBase: React.StatelessComponent<SignupFormProps & InjectedFormPro
                             validate={validatePasswordList}
                             fullWidth={true}
                             placeholder={passwordAgainLabel}
+                            required={true}
                         />
                     </Grid>
                 </Grid>
