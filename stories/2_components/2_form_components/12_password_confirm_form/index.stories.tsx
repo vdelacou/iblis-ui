@@ -3,10 +3,10 @@ import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { ConfigProps, reduxForm } from 'redux-form';
-import { ForceChangePasswordForm, ForceChangePasswordFormProps, ForceChangePasswordFormValues } from '../../../../src';
+import { PasswordConfirmForm, PasswordConfirmFormProps, PasswordConfirmFormValues } from '../../../../src';
 import { injectProvider, injectTheme } from '../../../decorators';
 
-export default storiesOf('2.2.10 ForceChangePasswordForm', module)
+export default storiesOf('2.2.12 PasswordConfirmForm', module)
     .addDecorator((story: RenderFunction) => {
         return (
             injectTheme(story)
@@ -18,35 +18,38 @@ export default storiesOf('2.2.10 ForceChangePasswordForm', module)
         );
     })
     //
-    .add('ForceChangePasswordForm', withInfo({ source: true })(() => {
+    .add('PasswordConfirmForm', withInfo({ source: true })(() => {
         // configure the form
-        function config(): ConfigProps<ForceChangePasswordFormValues, ForceChangePasswordFormProps> {
-            const configForm: ConfigProps<ForceChangePasswordFormValues, ForceChangePasswordFormProps> = {
-                form: 'ForceChangePasswordForm',
+        function config(): ConfigProps<PasswordConfirmFormValues, PasswordConfirmFormProps> {
+            const configForm: ConfigProps<PasswordConfirmFormValues, PasswordConfirmFormProps> = {
+                form: 'PasswordConfirmForm',
             };
             return configForm;
         }
         // connect the form
-        const ConnectedForm = reduxForm(config())(ForceChangePasswordForm);
+        const ConnectedForm = reduxForm(config())(PasswordConfirmForm);
         return (
             <ConnectedForm
-                passwordLabel={'Choose a new password'}
-                passwordAgainLabel={'Re-enter new password'}
-                buttonLabelConfirm={'Change Password'}
+                codeLabel={'Enter your code'}
+                passwordLabel={'New password'}
+                passwordAgainLabel={'Confirm password'}
+                buttonLabelConfirm={'Submit'}
+                backLabel={'Resend Code'}
                 minimumPasswordLength={8}
                 maximumPasswordLength={128}
-                passwordLengthErrorLabel={'Password must be 8 characters minimum'}
                 minimumUppercasePassword={1}
                 minimumUppercaseErrorLabel={'Password must have at least 1 upper case letter'}
                 minimumLowercasePassword={1}
                 minimumLowercaseErrorLabel={'Password must have at least 1 lower case letter'}
                 minimumDigitPassword={1}
                 minimumDigitErrorLabel={'Password must have at least 1 number'}
-                minimumSpecialCharPassword={0}
+                minimumSpecialCharPassword={1}
                 minimumSpecialCharErrorLabel={'Password must have at least 1 special char : $@$!%*#?&'}
-                requiredErrorLabel={'Required'}
+                passwordLengthErrorLabel={'Password must be 8 characters minimum'}
                 passwordNotIdentical={'Password must be identical'}
-                setPassword={action('Set Password')}
+                requiredErrorLabel={'Required'}
+                passwordConfirm={action('Password Confirm')}
+                back={action('back')}
             />
         );
     }))

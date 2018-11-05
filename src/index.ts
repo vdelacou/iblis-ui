@@ -7,7 +7,7 @@ export {
     EmptyPage, //
     FilterButton, FilterButtonMenuProps, FilterButtonProps, //
     FooterMenu, FooterMenuLevelProps, FooterMenuProps, //
-    ForceForceChangePasswordForm, ForceForceChangePasswordFormProps, ForceForceChangePasswordFormValues, //
+    ForceChangePasswordForm, ForceChangePasswordFormProps, ForceChangePasswordFormValues, //
     HelperButton, HelperButtonProps, //
     IblisButton, IblisButtonProps, //
     IblisSelectField, IblisSelectFieldProps, //
@@ -17,10 +17,11 @@ export {
     ManagedAddSimpleForm, ManagedAddSimpleFormProps, ManagedAddSimpleFormValues, //
     ManagedSimpleForm, ManagedSimpleFormData, ManagedSimpleFormProps, //
     ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues, //
+    PasswordConfirmForm, PasswordConfirmFormProps, PasswordConfirmFormValues, //
     ProgressBar, ProgressBarProps, //
     ResetPasswordForm, ResetPasswordFormProps, ResetPasswordFormValues, //
     SignupForm, SignupFormProps, SignupFormValues, //
-    StripeForm, StripeFormProps, StripeFormValues, //
+    StripeForm, StripeFormProps, //
     UploadAvatar, UploadAvatarProps, //
     UserProfileForm, UserProfileFormProps, UserProfileFormValues //
 } from './components';

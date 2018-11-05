@@ -3,18 +3,18 @@ import * as React from 'react';
 import { Field, InjectedFormProps } from 'redux-form';
 import { IblisButton, IblisTextField } from '../../../components/ui_components';
 
-export interface ForceForceChangePasswordFormValues {
+export interface ForceChangePasswordFormValues {
     /**
      * The previous password of the user
      */
-    oldPassword?: string;
+    password?: string;
     /**
      * The password to set
      */
-    password?: string;
+    passwordAgain?: string;
 }
 
-export interface ForceForceChangePasswordFormProps {
+export interface ForceChangePasswordFormProps {
     /**
      * The password label for the password field
      */
@@ -86,16 +86,16 @@ export interface ForceForceChangePasswordFormProps {
     /*
      * The function to call to set the new password
      */
-    setPassword(values: ForceForceChangePasswordFormValues): void;
+    setPassword(values: ForceChangePasswordFormValues): void;
 }
 
-const ForceForceChangePasswordFormBase:
-    React.StatelessComponent<ForceForceChangePasswordFormProps & InjectedFormProps<ForceForceChangePasswordFormValues, ForceForceChangePasswordFormProps>>
+const ForceChangePasswordFormBase:
+    React.StatelessComponent<ForceChangePasswordFormProps & InjectedFormProps<ForceChangePasswordFormValues, ForceChangePasswordFormProps>>
     = (props) => {
 
         const { passwordLabel, passwordAgainLabel, buttonLabelConfirm, isLoading, handleSubmit, submitting, reset, setPassword } = props;
 
-        const submitForm = (values: ForceForceChangePasswordFormValues) => {
+        const submitForm = (values: ForceChangePasswordFormValues) => {
             setPassword(values);
             reset();
         };
@@ -132,7 +132,7 @@ const ForceForceChangePasswordFormBase:
 
 function renderFormField(
     type: string, fieldName: string, label: string, submitting: boolean,
-    validateFunction: Array<(value: string, allValues: ForceForceChangePasswordFormValues, props: ForceForceChangePasswordFormProps) => string | undefined>, isLoading?: boolean) {
+    validateFunction: Array<(value: string, allValues: ForceChangePasswordFormValues, props: ForceChangePasswordFormProps) => string | undefined>, isLoading?: boolean) {
     return (
         <Grid container={true} >
             <Grid item={true} xs={12}>
@@ -151,25 +151,25 @@ function renderFormField(
     );
 }
 
-function requiredTextField(value: string, _allValues: ForceForceChangePasswordFormValues, props: ForceForceChangePasswordFormProps) {
+function requiredTextField(value: string, _allValues: ForceChangePasswordFormValues, props: ForceChangePasswordFormProps) {
     return value && value.trim() !== '' ? undefined : props.requiredErrorLabel;
 }
 
-function validatePassword(value: string, allValues: ForceForceChangePasswordFormValues, props: ForceForceChangePasswordFormProps) {
+function validatePassword(value: string, allValues: ForceChangePasswordFormValues, props: ForceChangePasswordFormProps) {
     if (value !== allValues.password) {
         return props.passwordNotIdentical;
     }
     return undefined;
 }
 
-function validatePasswordLength(value: string, _allValues: ForceForceChangePasswordFormValues, props: ForceForceChangePasswordFormProps) {
+function validatePasswordLength(value: string, _allValues: ForceChangePasswordFormValues, props: ForceChangePasswordFormProps) {
     if (value.length < props.minimumPasswordLength || value.length > props.maximumPasswordLength) {
         return props.passwordLengthErrorLabel;
     }
     return undefined;
 }
 
-function validatePasswordUppercase(value: string, _allValues: ForceForceChangePasswordFormValues, props: ForceForceChangePasswordFormProps) {
+function validatePasswordUppercase(value: string, _allValues: ForceChangePasswordFormValues, props: ForceChangePasswordFormProps) {
     const numUpper = value.length - value.replace(/[A-Z]/g, '').length;
     if (numUpper < props.minimumUppercasePassword) {
         return props.minimumUppercaseErrorLabel;
@@ -177,7 +177,7 @@ function validatePasswordUppercase(value: string, _allValues: ForceForceChangePa
     return undefined;
 }
 
-function validatePasswordLowercase(value: string, _allValues: ForceForceChangePasswordFormValues, props: ForceForceChangePasswordFormProps) {
+function validatePasswordLowercase(value: string, _allValues: ForceChangePasswordFormValues, props: ForceChangePasswordFormProps) {
     const numLower = value.length - value.replace(/[a-z]/g, '').length;
     if (numLower < props.minimumLowercasePassword) {
         return props.minimumLowercaseErrorLabel;
@@ -185,7 +185,7 @@ function validatePasswordLowercase(value: string, _allValues: ForceForceChangePa
     return undefined;
 }
 
-function validatePasswordSpecialChar(value: string, _allValues: ForceForceChangePasswordFormValues, props: ForceForceChangePasswordFormProps) {
+function validatePasswordSpecialChar(value: string, _allValues: ForceChangePasswordFormValues, props: ForceChangePasswordFormProps) {
     const numSpecial = value.length - value.replace(/[$@$!%*#?&]/g, '').length;
     if (numSpecial < props.minimumSpecialCharPassword) {
         return props.minimumSpecialCharErrorLabel;
@@ -193,7 +193,7 @@ function validatePasswordSpecialChar(value: string, _allValues: ForceForceChange
     return undefined;
 }
 
-function validatePasswordDigit(value: string, _allValues: ForceForceChangePasswordFormValues, props: ForceForceChangePasswordFormProps) {
+function validatePasswordDigit(value: string, _allValues: ForceChangePasswordFormValues, props: ForceChangePasswordFormProps) {
     const numDigit = value.length - value.replace(/[0-9]/g, '').length;
     if (numDigit < props.minimumDigitPassword) {
         return props.minimumDigitErrorLabel;
@@ -206,6 +206,6 @@ function validatePasswordDigit(value: string, _allValues: ForceForceChangePasswo
  * The old password format is not checked, the new password must respect format.
  * Password can be checked with , length, number of uppercase, lowercase, digits and special characters
  */
-export const ForceForceChangePasswordForm:
-    React.ComponentType<ForceForceChangePasswordFormProps & InjectedFormProps<ForceForceChangePasswordFormValues, ForceForceChangePasswordFormProps>> =
-    (ForceForceChangePasswordFormBase);
+export const ForceChangePasswordForm:
+    React.ComponentType<ForceChangePasswordFormProps & InjectedFormProps<ForceChangePasswordFormValues, ForceChangePasswordFormProps>> =
+    (ForceChangePasswordFormBase);

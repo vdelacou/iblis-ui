@@ -1,19 +1,20 @@
 export {
-    ChangePasswordForm, ChangePasswordFormProps, ChangePasswordFormValues, //
+ChangePasswordForm, ChangePasswordFormProps, ChangePasswordFormValues, //
     ConfirmSignupForm, ConfirmSignupFormProps, ConfirmSignupFormValues, //
     DeleteAccountForm, DeleteAccountFormProps, DeleteAccountFormValues, //
-    ForceForceChangePasswordForm, ForceForceChangePasswordFormProps, ForceForceChangePasswordFormValues, //
+    ForceChangePasswordForm, ForceChangePasswordFormProps, ForceChangePasswordFormValues, //
     LoginForm, LoginFormProps, LoginFormValues, //
     ManagedAddSimpleForm, ManagedAddSimpleFormProps, ManagedAddSimpleFormValues, //
     ManagedSimpleForm, ManagedSimpleFormData, ManagedSimpleFormProps, //
     ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues, //
+    PasswordConfirmForm, PasswordConfirmFormProps, PasswordConfirmFormValues, //
     ResetPasswordForm, ResetPasswordFormProps, ResetPasswordFormValues, //
     SignupForm, SignupFormProps, SignupFormValues, //
-    StripeForm, StripeFormProps, StripeFormValues, //
+    StripeForm, StripeFormProps, //
     UserProfileForm, UserProfileFormProps, UserProfileFormValues //
 } from './form_components';
 export {
-    AccountCard, AccountCardProps, //
+AccountCard, AccountCardProps, //
     AccountMenu, AccountMenuLevelProps, AccountMenuProps, //
     EmptyPage, //
     FilterButton, FilterButtonMenuProps, FilterButtonProps, //
@@ -27,3 +28,4 @@ export {
     ProgressBar, ProgressBarProps, //
     UploadAvatar, UploadAvatarProps
 } from './ui_components';
+

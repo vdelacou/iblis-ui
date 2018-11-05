@@ -1,104 +1,104 @@
-import { ButtonBase, Grid, Typography, withTheme, WithTheme } from '@material-ui/core';
+import { Grid, withTheme, WithTheme } from '@material-ui/core';
 import * as React from 'react';
 import { CardElement, injectStripe, ReactStripeElements } from 'react-stripe-elements';
-import { InjectedFormProps } from 'redux-form';
 import { IblisButton } from '../../../components/ui_components';
 
-export interface StripeFormValues {
-    /**
-     * The email for stripe
-     */
-    email?: string;
-}
-
 export interface StripeFormProps {
-    /**
-     * The code label for the code field
-     */
-    emailLabel: string;
+
     /**
      * The button label to launch main action
      */
     buttonLabelConfirm: string;
     /**
-     * The back label
-     */
-    backLabel: string;
-    /**
-     * The error to show when form have no email
-     */
-    requiredErrorLabel: string;
-    /**
-     * The error to show when email is not correct
-     */
-    emailNotValidErrorLabel: string;
-    /**
      * To show to user that the action is loading
      */
     isLoading?: boolean;
     /*
-     * The function to call reset password
+     * The function to call to get the token
      */
-    stripe(values: StripeFormValues): void;
-    /*
-     * The function to call when click on back
-     */
-    back(): void;
+    stripeToken(stripeToken: string): void;
 }
 
-const StripeFormBase: React.StatelessComponent<StripeFormProps & InjectedFormProps<StripeFormValues, StripeFormProps>
-    & ReactStripeElements.InjectedStripeProps & WithTheme> = (props) => {
+class StripeFormState {
+    /**
+     * Loading when waiting for stripe
+     * @default true
+     */
+    readonly loadingStripe: boolean = true;
+}
 
-        const { backLabel, buttonLabelConfirm, isLoading, back, handleSubmit, submitting } = props;
+class StripeFormBase extends React.PureComponent<StripeFormProps & ReactStripeElements.InjectedStripeProps & WithTheme, StripeFormState>  {
 
-        const submitForm = (form: StripeFormValues) => {
-            props.stripe(form);
+    readonly state = new StripeFormState();
+
+    render(): React.ReactNode {
+
+        const { buttonLabelConfirm, isLoading, stripeToken, theme } = this.props;
+
+        const cardStyle = {
+            base: {
+                'color': theme.typography.headline.color,
+                'fontFamily': theme.typography.headline.fontFamily,
+                '::placeholder': {
+                    color: theme.palette.grey['500'],
+                },
+            },
+            invalid: {
+                color: theme.palette.error.main,
+            },
+        };
+
+        const submitForm = (event: React.FormEvent<{}>) => {
+            event.preventDefault();
+            this.setState(() => ({ loadingStripe: true }));
+            if (this.props.stripe) {
+                this.props.stripe.createToken().then((payload) => {
+                    this.setState(() => ({ loadingStripe: false }));
+                    if (payload.token) {
+                        stripeToken(payload.token.id);
+                    }
+                }
+                );
+            }
+        };
+
+        const stripeReady = () => {
+            this.setState(() => ({ loadingStripe: false }));
         };
 
         return (
             <div>
                 <form
-                    onSubmit={handleSubmit(submitForm)}
+                    onSubmit={submitForm}
                     noValidate={true}
                 >
-                    {/* email */}
+                    {/* card */}
                     <Grid container={true} >
-                        <Grid item={true} xs={12}>
-                            <CardElement />
+                        <Grid item={true} xs={5}>
+                            <CardElement style={cardStyle} onReady={stripeReady} />
                         </Grid>
                     </Grid>
-                    <Grid container={true} justify="space-between" >
-                        {/* back */}
-                        <Grid item={true} >
-                            <Typography variant="subheading">
-                                <ButtonBase onClick={() => back()} disabled={submitting || isLoading}>
-                                    {backLabel}
-                                </ButtonBase>
-                            </Typography>
-                        </Grid>
+                    <Grid container={true} justify="flex-end" >
                         {/* button */}
                         <Grid item={true} >
                             <IblisButton
                                 buttonType={'primary'}
                                 buttonLabel={buttonLabelConfirm}
                                 type="submit"
-                                isLoading={submitting || isLoading}
+                                isLoading={isLoading || this.state.loadingStripe}
                             />
                         </Grid>
                     </Grid>
-
                 </form>
             </div >
         );
-    };
+    }
+}
 
-const StripeWithStripe: React.ComponentType<StripeFormProps & InjectedFormProps<StripeFormValues, StripeFormProps> & WithTheme> =
-    injectStripe(StripeFormBase);
-
-const StripeWithTheme: React.ComponentType<StripeFormProps & InjectedFormProps<StripeFormValues, StripeFormProps>> =
-    withTheme()(StripeWithStripe);
+const StripeWithStripe: React.ComponentType<StripeFormProps & WithTheme> = injectStripe(StripeFormBase);
+const StripeWithTheme: React.ComponentType<StripeFormProps> = withTheme()(StripeWithStripe);
 
 /**
  * A form for stripe.
  */
-export const StripeForm: React.ComponentType<StripeFormProps & InjectedFormProps<StripeFormValues, StripeFormProps>> = (StripeWithTheme);
+export const StripeForm: React.ComponentType<StripeFormProps> = (StripeWithTheme);
