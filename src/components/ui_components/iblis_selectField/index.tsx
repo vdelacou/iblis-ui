@@ -20,11 +20,6 @@ export interface IblisSelectFieldProps {
      */
     required?: boolean;
     /**
-     * If true, the input will take up the full width of its container
-     * @default false
-     */
-    fullWidth?: boolean;
-    /**
      * If true, the input will be focused during the first mount.
      * @default false
      */
@@ -42,7 +37,7 @@ export interface IblisSelectFieldProps {
 }
 
 const IblisSelectFieldBase: React.StatelessComponent<IblisSelectFieldProps & WrappedFieldProps & WithStyles<ClassKey> & WithTheme> = (props) => {
-    const { values, iblisDefaultValue, required = false, fullWidth = false, autoFocus = false, disabled = false, placeholder,
+    const { values, iblisDefaultValue, required = false, autoFocus = false, disabled = false, placeholder,
         input, meta, theme, classes } = props;
 
     const inputProps: Partial<InputProps> = {
@@ -72,10 +67,10 @@ const IblisSelectFieldBase: React.StatelessComponent<IblisSelectFieldProps & Wra
                     onFocus={input.onFocus}
                     value={input.value ? input.value : iblisDefaultValue ? iblisDefaultValue : placeholder}
                     required={required}
-                    fullWidth={fullWidth}
                     autoFocus={autoFocus}
                     disabled={disabled}
                     placeholder={placeholder}
+                    fullWidth={true}
                     select={true}
                 >
                     {placeholder && <MenuItem value={placeholder} disabled={true} selected={true}>{`--- ${placeholder} ---`}</MenuItem>}

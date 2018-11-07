@@ -136,7 +136,6 @@ const SignupFormBase: React.StatelessComponent<SignupFormProps & InjectedFormPro
                             component={IblisTextField}
                             disabled={submitting || isLoading}
                             validate={[requiredTextField, validateEmail]}
-                            fullWidth={true}
                             placeholder={emailLabel}
                             required={true}
                         />
@@ -151,7 +150,6 @@ const SignupFormBase: React.StatelessComponent<SignupFormProps & InjectedFormPro
                             component={IblisTextField}
                             disabled={submitting || isLoading}
                             validate={validatePasswordList}
-                            fullWidth={true}
                             placeholder={passwordLabel}
                             required={true}
                         />
@@ -166,7 +164,6 @@ const SignupFormBase: React.StatelessComponent<SignupFormProps & InjectedFormPro
                             component={IblisTextField}
                             disabled={submitting || isLoading}
                             validate={validatePasswordList}
-                            fullWidth={true}
                             placeholder={passwordAgainLabel}
                             required={true}
                         />

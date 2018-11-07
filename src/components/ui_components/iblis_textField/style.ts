@@ -28,7 +28,7 @@ export const createSytle = (theme: Theme): StyleRules<ClassKey> => {
         'border': `1px solid ${theme.palette.grey['500']}`,
         'fontSize': 16,
         'padding': `${theme.spacing.unit}px ${theme.spacing.unit}px`,
-        'width': `calc(100% - ${theme.spacing.unit * 2}px)`,
+        'minWidth': `calc(100% - ${theme.spacing.unit * 2.25}px)`,
         '&:focus': {
             borderColor: theme.palette.primary.main,
         },

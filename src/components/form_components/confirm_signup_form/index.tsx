@@ -87,7 +87,6 @@ const ConfirmSignupFormBase: React.StatelessComponent<ConfirmSignupFormProps & I
                             component={IblisTextField}
                             disabled={true}
                             validate={[requiredTextField]}
-                            fullWidth={true}
                             required={true}
                         />
                     </Grid>
@@ -101,7 +100,6 @@ const ConfirmSignupFormBase: React.StatelessComponent<ConfirmSignupFormProps & I
                             component={IblisTextField}
                             disabled={submitting || isLoading}
                             validate={[requiredTextField]}
-                            fullWidth={true}
                             placeholder={codeLabel}
                             required={true}
                         />

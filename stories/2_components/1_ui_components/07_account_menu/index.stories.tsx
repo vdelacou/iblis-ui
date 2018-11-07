@@ -1,6 +1,5 @@
 import { PowerSettingsNew, Receipt, Settings } from '@material-ui/icons';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { AccountCard, AccountMenu, AccountMenuLevelProps } from '../../../../src';
@@ -13,7 +12,7 @@ export default storiesOf('2.1.7 Account Menu', module)
     );
   })
   //
-  .add('AccountMenu', withInfo({ source: true })(() => {
+  .add('AccountMenu', (() => {
     const accountMenu: AccountMenuLevelProps[] = [
       { name: 'Billing', action: action('Billing clicked'), icon: <Receipt /> },
       { name: 'Settings', action: action('Settings clicked'), icon: <Settings /> },

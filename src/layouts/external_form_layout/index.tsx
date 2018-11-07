@@ -38,7 +38,6 @@ const ExternalFormLayoutBase: React.StatelessComponent<ExternalFormLayoutProps &
                             value={1}
                             textColor={'primary'}
                             centered={true}
-                            fullWidth={true}
                         >
                             <Tab label={tabLabel} icon={icon} selected={false} />
                         </Tabs>

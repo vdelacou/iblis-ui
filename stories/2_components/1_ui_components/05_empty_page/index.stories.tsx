@@ -1,4 +1,3 @@
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { EmptyPage } from '../../../../src';
@@ -11,7 +10,7 @@ export default storiesOf('2.1.5 Empty Page', module)
     );
   })
   //
-  .add('EmptyPage', withInfo({ source: true })(() => {
+  .add('EmptyPage', (() => {
     return (
       <EmptyPage
       />

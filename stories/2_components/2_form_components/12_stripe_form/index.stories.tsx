@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Elements, StripeProvider } from 'react-stripe-elements';
@@ -18,7 +17,7 @@ export default storiesOf('2.2.12 StripeForm', module)
         );
     })
     //
-    .add('StripeForm', withInfo({ source: true })(() => {
+    .add('StripeForm', (() => {
         return (
             <StripeProvider apiKey="pk_test_LDqpUr0tLsfAApZIUjAIGhOV">
                 <Elements>

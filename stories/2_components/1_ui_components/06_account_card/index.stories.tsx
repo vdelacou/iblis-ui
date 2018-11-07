@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { AccountCard } from '../../../../src';
@@ -12,7 +11,7 @@ export default storiesOf('2.1.6 Account Card', module)
     );
   })
   //
-  .add('AccountCard', withInfo({ source: true })(() => {
+  .add('AccountCard', (() => {
     return (
       <AccountCard
         avatarUrl="https://pickaface.net/gallery/avatar/unr_alberteinstein_161028_1839_7f2a2to8.png"

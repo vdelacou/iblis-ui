@@ -1,5 +1,4 @@
 import { AccountBox } from '@material-ui/icons';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { ExternalFormLayout } from '../../../src';
@@ -12,7 +11,7 @@ export default storiesOf('1.2 External Form Layout', module)
     );
   })
   //
-  .add('ExternalFormLayout', withInfo({ source: true })(() => (
+  .add('ExternalFormLayout', (() => (
     <ExternalFormLayout
       title={'Sign up to our Iblis App'}
       icon={<AccountBox />}

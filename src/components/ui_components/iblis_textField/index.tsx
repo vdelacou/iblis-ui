@@ -19,11 +19,6 @@ export interface IblisTextFieldProps {
      */
     required?: boolean;
     /**
-     * If true, the input will take up the full width of its container
-     * @default false
-     */
-    fullWidth?: boolean;
-    /**
      * If true, a textarea element will be rendered instead of an input.
      * @default false
      */
@@ -57,7 +52,7 @@ export interface IblisTextFieldProps {
 }
 
 const IblisTextFieldBase: React.StatelessComponent<IblisTextFieldProps & WrappedFieldProps & WithStyles<ClassKey> & WithTheme> = (props) => {
-    const { type, iblisDefaultValue, required = false, fullWidth = false, multiline = false, rows, rowsMax, autoFocus = false, disabled = false, placeholder,
+    const { type, iblisDefaultValue, required = false, multiline = false, rows, rowsMax, autoFocus = false, disabled = false, placeholder,
         inputRef, input, meta, theme, classes } = props;
 
     const inputProps: Partial<InputProps> = {
@@ -80,13 +75,13 @@ const IblisTextFieldBase: React.StatelessComponent<IblisTextFieldProps & Wrapped
                     value={input.value}
                     defaultValue={iblisDefaultValue}
                     required={required}
-                    fullWidth={fullWidth}
                     multiline={multiline}
                     rows={rows}
                     rowsMax={rowsMax}
                     autoFocus={autoFocus}
                     disabled={disabled}
                     placeholder={placeholder}
+                    fullWidth={true}
                     inputRef={inputRef}
                 />
                 {/* display a star if the field is required */}

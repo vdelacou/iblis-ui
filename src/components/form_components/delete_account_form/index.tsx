@@ -114,7 +114,6 @@ class DeleteAccountFormBase extends React.PureComponent<
                                 validate={[requiredTextField, validateEmail]}
                                 required={true}
                                 disabled={this.props.submitting || this.props.isLoading}
-                                fullWidth={true}
                             />
                         </Grid>
                     </Grid >
@@ -170,7 +169,6 @@ class DeleteAccountFormBase extends React.PureComponent<
                                 name="leaveComments"
                                 component={IblisTextField}
                                 disabled={submitting || isLoading}
-                                fullWidth={true}
                                 multiline={true}
                                 rows={3}
                             />

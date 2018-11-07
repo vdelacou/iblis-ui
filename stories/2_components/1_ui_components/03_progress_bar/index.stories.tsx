@@ -1,6 +1,5 @@
 
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { ProgressBar } from '../../../../src';
@@ -13,7 +12,7 @@ export default storiesOf('2.1.3 Progress Bar', module)
         );
     })
     //
-    .add('ProgressBar', withInfo({ source: true })(() => (
+    .add('ProgressBar', (() => (
         <ProgressBar
             activeIndex={0}
             menuList={['Sourced', 'Applied', 'Interview', 'Hired']}

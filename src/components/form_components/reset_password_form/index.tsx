@@ -68,7 +68,6 @@ const ResetPasswordFormBase: React.StatelessComponent<ResetPasswordFormProps & I
                             component={IblisTextField}
                             disabled={submitting || isLoading}
                             validate={[requiredTextField, validateEmail]}
-                            fullWidth={true}
                             placeholder={emailLabel}
                             required={true}
                         />

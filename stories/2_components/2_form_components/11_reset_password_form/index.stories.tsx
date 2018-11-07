@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { ConfigProps, reduxForm } from 'redux-form';
@@ -18,7 +17,7 @@ export default storiesOf('2.2.11 ResetPasswordForm', module)
         );
     })
     //
-    .add('ResetPasswordForm', withInfo({ source: true })(() => {
+    .add('ResetPasswordForm', (() => {
         // configure the form
         function config(): ConfigProps<ResetPasswordFormValues, ResetPasswordFormProps> {
             const configForm: ConfigProps<ResetPasswordFormValues, ResetPasswordFormProps> = {

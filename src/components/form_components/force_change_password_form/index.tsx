@@ -142,7 +142,6 @@ function renderFormField(
                     component={IblisTextField}
                     disabled={submitting || isLoading}
                     validate={validateFunction}
-                    fullWidth={true}
                     placeholder={label}
                     required={true}
                 />

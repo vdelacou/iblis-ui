@@ -1,5 +1,4 @@
 import { Typography } from '@material-ui/core';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { ContentWithTitle, HelperButton } from '../../../src';
@@ -12,7 +11,7 @@ export default storiesOf('1.5 Content With Title Layout', module)
     );
   })
   //
-  .add('ContentWithTitle', withInfo({ source: true })(() => (
+  .add('ContentWithTitle', (() => (
     <ContentWithTitle
       title={'Change password'}
     >

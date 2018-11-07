@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import { Publish } from 'mdi-material-ui';
 import * as React from 'react';
@@ -13,7 +12,7 @@ export default storiesOf('2.1.1 Iblis Button', module)
     );
   })
   //
-  .add('IblisButton', withInfo({ source: true })(() => (
+  .add('IblisButton', (() => (
     <IblisButton
       buttonType={'primary'}
       buttonLabel={'Iblis'}
@@ -29,7 +28,7 @@ export default storiesOf('2.1.1 Iblis Button', module)
     />
   )))
   //
-  .add('Primary Button with Icon', withInfo({ source: true })(() => (
+  .add('Primary Button with Icon', (() => (
     <IblisButton
       buttonType={'primary'}
       buttonLabel={'Iblis'}

@@ -72,7 +72,29 @@
     window.__VUE_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__VUE_DEVTOOLS_GLOBAL_HOOK__;
   }
 </script>
+<script src="https://js.stripe.com/v3/"></script>
+<style>
+    input,
+    .StripeElement {
+        display: block;
+        margin: 10px 0 20px 0;
+        max-width: 500px;
+        padding: 10px 14px;
+        font-size: 1em;
+        font-family: 'Source Code Pro', monospace;
+        border: 1px solid #dddddd;
+        outline: 0;
+        border-radius: 0;
+        background: white;
+    }
 
+    input:focus,
+    .StripeElement--focus {
+        border: 1px solid #0667d0;
+        -webkit-transition: all 150ms ease;
+        transition: all 150ms ease;
+    }
+</style>
     
   
 </head>
@@ -113,11 +135,11 @@
       
     
       
-        <script src="static/vendors~iframe.e131a872acf1b0a210e2.bundle.js" defer></script>
+        <script src="static/vendors~iframe.e4b1a55b183ca6a06db1.bundle.js" defer></script>
       
     
       
-        <script src="static/iframe.5543ea97c42e0963e83c.bundle.js" defer></script>
+        <script src="static/iframe.1efc732f812d81c9dfdb.bundle.js" defer></script>
       
     
   

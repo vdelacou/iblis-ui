@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { FooterMenu, FooterMenuLevelProps, FooterMenuProps } from '../../../../src';
@@ -22,7 +21,7 @@ export default storiesOf('2.1.8 Footer Menu', module)
     );
   })
   //
-  .add('FooterMenu', withInfo({ source: true })(() => {
+  .add('FooterMenu', (() => {
     return (
       <FooterMenu {...footerMenuProps} />
     );

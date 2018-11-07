@@ -1,6 +1,5 @@
 import { Store, withState } from '@dump247/storybook-state';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { ManagedSimpleForm, ManagedSimpleFormData, ManagedSimpleFormProps } from '../../../../src';
@@ -22,7 +21,7 @@ export default storiesOf('2.2.1 Managed Simple Form', module)
         );
     })
     //
-    .add('ManagedSimpleForm', withInfo({ source: true })(() => {
+    .add('ManagedSimpleForm', (() => {
 
         const data = [
             {

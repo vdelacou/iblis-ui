@@ -241,7 +241,6 @@ class ManagedSimpleListFormBase extends
                         required={true}
                         autoFocus={true}
                         withRef={true}
-                        fullWidth={true}
                         inputRef={(ref: HTMLInputElement) => this.focusInputField(ref)}
                     />
                 </div>

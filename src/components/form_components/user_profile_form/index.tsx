@@ -121,7 +121,6 @@ const UserProfileFormBase: React.StatelessComponent<UserProfileFormProps & Injec
                                     disabled={submitting || isLoading}
                                     validate={[requiredTextField]}
                                     required={true}
-                                    fullWidth={true}
                                 />
                             </Grid>
                         </Grid>
@@ -140,7 +139,6 @@ const UserProfileFormBase: React.StatelessComponent<UserProfileFormProps & Injec
                                     disabled={submitting || isLoading}
                                     validate={[requiredTextField]}
                                     required={true}
-                                    fullWidth={true}
                                 />
                             </Grid>
                         </Grid>
@@ -159,7 +157,6 @@ const UserProfileFormBase: React.StatelessComponent<UserProfileFormProps & Injec
                                     disabled={submitting || isLoading}
                                     validate={[requiredTextField, validateEmail]}
                                     required={true}
-                                    fullWidth={true}
                                 />
                             </Grid>
                         </Grid>
@@ -178,7 +175,6 @@ const UserProfileFormBase: React.StatelessComponent<UserProfileFormProps & Injec
                                     disabled={submitting || isLoading}
                                     validate={[requiredTextField]}
                                     required={true}
-                                    fullWidth={true}
                                     values={languagePossibleValues}
                                 />
                             </Grid>

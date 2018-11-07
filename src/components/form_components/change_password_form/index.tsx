@@ -178,7 +178,6 @@ function renderFormField(
                     disabled={submitting || isLoading}
                     validate={validateFunction}
                     required={true}
-                    fullWidth={true}
                 />
             </Grid>
             {renderHelpPassword()}

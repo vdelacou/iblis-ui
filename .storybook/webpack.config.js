@@ -7,7 +7,6 @@ module.exports = (baseConfig, env, config) => {
       test: /\.(ts|tsx)$/,
       loader: [
         require.resolve("awesome-typescript-loader"),
-        // require.resolve("react-docgen-typescript-loader")
       ]
     },
   );

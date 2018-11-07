@@ -28,4 +28,3 @@ AccountCard, AccountCardProps, //
     ProgressBar, ProgressBarProps, //
     UploadAvatar, UploadAvatarProps
 } from './ui_components';
-

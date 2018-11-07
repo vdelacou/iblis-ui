@@ -4,12 +4,10 @@
   "license": "Apache-2.0",
   "author": "DELACOURT Vincent <vincent.delacourt@gmail.com>",
   "description": "Beautiful React UI components to be used in a SaaS",
-  "contributors": [
-    {
-      "name": "DELACOURT Vincent",
-      "email": "vincent.delacourt@gmail.com"
-    }
-  ],
+  "contributors": [{
+    "name": "DELACOURT Vincent",
+    "email": "vincent.delacourt@gmail.com"
+  }],
   "repository": {
     "type": "git",
     "url": "git@github.com:vdelacou/iblis-ui.git"
@@ -53,10 +51,9 @@
     "@babel/core": "^7.0.0",
     "@dump247/storybook-state": "^1.5.0",
     "@storybook/addon-actions": "^4.0.0-alpha.20",
-    "@storybook/addon-info": "^4.0.0-alpha.20",
-    "@storybook/addon-options": "^4.0.0-alpha.20",
     "@storybook/addon-storyshots": "^4.0.0-alpha.20",
     "@storybook/addon-viewport": "^4.0.0-alpha.20",
+    "@storybook/addon-options": "^4.0.0-alpha.20",
     "@storybook/addons": "^4.0.0-alpha.20",
     "@storybook/cli": "^4.0.0-alpha.20",
     "@storybook/react": "^4.0.0-alpha.20",
@@ -71,7 +68,6 @@
     "@types/react-test-renderer": "^16.0.2",
     "@types/redux-logger": "^3.0.6",
     "@types/storybook__addon-actions": "^3.4.1",
-    "@types/storybook__addon-info": "^3.4.1",
     "@types/storybook__addon-options": "^3.2.2",
     "@types/storybook__addon-storyshots": "^3.4.3",
     "@types/storybook__react": "^3.0.9",
@@ -81,8 +77,6 @@
     "enzyme": "^3.5.0",
     "enzyme-adapter-react-16": "^1.3.1",
     "jest": "^23.5.0",
-    "react-docgen-typescript-loader": "^2.2.0",
-    "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "redux-logger": "^3.0.6",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.1.4",

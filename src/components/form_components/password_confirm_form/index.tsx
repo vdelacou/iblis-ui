@@ -133,7 +133,6 @@ const PasswordConfirmFormBase:
                                 component={IblisTextField}
                                 disabled={submitting || isLoading}
                                 validate={[requiredTextField]}
-                                fullWidth={true}
                                 placeholder={codeLabel}
                                 required={true}
                             />
@@ -148,7 +147,6 @@ const PasswordConfirmFormBase:
                                 component={IblisTextField}
                                 disabled={submitting || isLoading}
                                 validate={validatePasswordList}
-                                fullWidth={true}
                                 placeholder={passwordLabel}
                                 required={true}
                             />
@@ -163,7 +161,6 @@ const PasswordConfirmFormBase:
                                 component={IblisTextField}
                                 disabled={submitting || isLoading}
                                 validate={validatePasswordList}
-                                fullWidth={true}
                                 placeholder={passwordAgainLabel}
                                 required={true}
                             />

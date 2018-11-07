@@ -62,7 +62,6 @@ const ManagedAddSimpleFormBase:
                                 validate={validateFunctions}
                                 required={true}
                                 placeholder={namePlaceHolder}
-                                fullWidth={true}
                             />
                         </Grid>
                         {/* button */}

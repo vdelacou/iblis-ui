@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { ConfigProps, reduxForm } from 'redux-form';
@@ -22,7 +21,7 @@ export default storiesOf('2.2.3 Managed Simple List Form', module)
         );
     })
     //
-    .add('ManagedSimpleListForm', withInfo({ source: true })(() => {
+    .add('ManagedSimpleListForm', (() => {
         // configure the form
         const config = (): ConfigProps<ManagedSimpleListFormValues, ManagedSimpleListFormProps> => {
             const configForm: ConfigProps<ManagedSimpleListFormValues, ManagedSimpleListFormProps> = {

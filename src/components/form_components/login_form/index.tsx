@@ -96,7 +96,6 @@ const LoginFormBase: React.StatelessComponent<LoginFormProps & InjectedFormProps
                             component={IblisTextField}
                             disabled={submitting || isLoading}
                             validate={[requiredTextField, validateEmail]}
-                            fullWidth={true}
                             placeholder={emailLabel}
                             required={true}
                         />
@@ -111,7 +110,6 @@ const LoginFormBase: React.StatelessComponent<LoginFormProps & InjectedFormProps
                             component={IblisTextField}
                             disabled={submitting || isLoading}
                             validate={[requiredTextField, validateLengthPassword]}
-                            fullWidth={true}
                             placeholder={passwordLabel}
                             required={true}
                         />

@@ -1,5 +1,4 @@
 import { Typography } from '@material-ui/core';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { HelperButton } from '../../../../src';
@@ -12,7 +11,7 @@ export default storiesOf('2.1.13 Helper Button', module)
     );
   })
   //
-  .add('FilterButton', withInfo({ source: true })(() => {
+  .add('FilterButton', (() => {
 
     const contentComponent = () => {
       return (

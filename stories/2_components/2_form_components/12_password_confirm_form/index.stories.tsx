@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { ConfigProps, reduxForm } from 'redux-form';
@@ -18,7 +17,7 @@ export default storiesOf('2.2.12 PasswordConfirmForm', module)
         );
     })
     //
-    .add('PasswordConfirmForm', withInfo({ source: true })(() => {
+    .add('PasswordConfirmForm', (() => {
         // configure the form
         function config(): ConfigProps<PasswordConfirmFormValues, PasswordConfirmFormProps> {
             const configForm: ConfigProps<PasswordConfirmFormValues, PasswordConfirmFormProps> = {

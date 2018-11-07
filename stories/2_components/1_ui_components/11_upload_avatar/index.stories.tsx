@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { UploadAvatar } from '../../../../src';
@@ -12,7 +11,7 @@ export default storiesOf('2.1.11 Upload Avatar', module)
     );
   })
   //
-  .add('UploadAvatar', withInfo({ source: true })(() => {
+  .add('UploadAvatar', (() => {
     return (
       <UploadAvatar
         buttonLabel={'Select File'}

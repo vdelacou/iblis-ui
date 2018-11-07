@@ -1,6 +1,5 @@
 import { Store, withState } from '@dump247/storybook-state';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { CardMenu, CardMenuProps } from '../../../src';
@@ -18,7 +17,7 @@ export default storiesOf('1.4 Card Menu Layout', module)
     );
   })
   .add('CardMenu',
-    withInfo({ source: true })(() => {
+    (() => {
       const menu = [
         {
           firstLevel: { name: 'Profile', action: () => action('Profile Clicked') },
