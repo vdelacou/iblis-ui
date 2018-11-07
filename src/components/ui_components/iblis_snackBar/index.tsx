@@ -1,16 +1,15 @@
 import { Snackbar, Typography, withTheme, WithTheme } from '@material-ui/core';
 import * as React from 'react';
-import { ComponentClass, StatelessComponent } from 'react';
 
 export interface IblisSnackbarProps {
     /**
-     * The label to display in the center of the button
+     * If need to display the error
      */
     isError: boolean;
     /**
      * The label to display in the center of the button
      */
-    errorText: string;
+    errorText?: string;
     /**
      * The number of milliseconds to wait before automatically calling the hide Function.
      * @default 3000
@@ -23,7 +22,7 @@ export interface IblisSnackbarProps {
 
 }
 
-const IblisSnackbarBase: StatelessComponent<IblisSnackbarProps & WithTheme> = (props) => {
+const IblisSnackbarBase: React.StatelessComponent<IblisSnackbarProps & WithTheme> = (props) => {
 
     const { isError, errorText, autoHideDuration = 3000, hide } = props;
 
@@ -37,9 +36,9 @@ const IblisSnackbarBase: StatelessComponent<IblisSnackbarProps & WithTheme> = (p
     );
 };
 
-const IblisSnackbarWithTheme: ComponentClass<IblisSnackbarProps> = withTheme()(IblisSnackbarBase);
+const IblisSnackbarWithTheme: React.ComponentType<IblisSnackbarProps> = withTheme()(IblisSnackbarBase);
 
 /**
  * Display a snackbar auto close it automatically after some times
  */
-export const IblisSnackbar: ComponentClass<IblisSnackbarProps> = (IblisSnackbarWithTheme);
+export const IblisSnackbar: React.ComponentType<IblisSnackbarProps> = (IblisSnackbarWithTheme);

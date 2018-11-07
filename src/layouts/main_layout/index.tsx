@@ -32,10 +32,10 @@ const MainLayoutBase: React.StatelessComponent<MainLayoutProps & WithTheme & { c
     );
 };
 
-const MainLayoutWithTheme: React.ComponentClass<MainLayoutProps> = withTheme()(MainLayoutBase);
+const MainLayoutWithTheme: React.ComponentType<MainLayoutProps> = withTheme()(MainLayoutBase);
 
 /**
  * Layout with the header and footer.
  * The footer is always is sticky on bottom
  */
-export const MainLayout: React.ComponentClass<MainLayoutProps> = (MainLayoutWithTheme);
+export const MainLayout: React.ComponentType<MainLayoutProps> = (MainLayoutWithTheme);

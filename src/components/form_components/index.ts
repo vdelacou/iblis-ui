@@ -1,6 +1,13 @@
 export { ChangePasswordForm, ChangePasswordFormProps, ChangePasswordFormValues } from './change_password_form';
+export { ConfirmSignupForm, ConfirmSignupFormProps, ConfirmSignupFormValues } from './confirm_signup_form';
 export { DeleteAccountForm, DeleteAccountFormProps, DeleteAccountFormValues } from './delete_account_form';
+export { ForceChangePasswordForm, ForceChangePasswordFormProps, ForceChangePasswordFormValues } from './force_change_password_form';
+export { LoginForm, LoginFormProps, LoginFormValues } from './login_form';
 export { ManagedAddSimpleForm, ManagedAddSimpleFormProps, ManagedAddSimpleFormValues } from './managed_simple_add_form';
-export { ManagedSimpleForm, ManagedSimpleFormProps } from './managed_simple_form';
+export { ManagedSimpleForm, ManagedSimpleFormData, ManagedSimpleFormProps } from './managed_simple_form';
 export { ManagedSimpleListForm, ManagedSimpleListFormProps, ManagedSimpleListFormValues } from './managed_simple_list_form';
+export { PasswordConfirmForm, PasswordConfirmFormProps, PasswordConfirmFormValues } from './password_confirm_form';
+export { ResetPasswordForm, ResetPasswordFormProps, ResetPasswordFormValues } from './reset_password_form';
+export { SignupForm, SignupFormProps, SignupFormValues } from './signup_form';
+export { StripeForm, StripeFormProps } from './stripe_form';
 export { UserProfileForm, UserProfileFormProps, UserProfileFormValues } from './user_profile_form';

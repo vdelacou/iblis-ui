@@ -32,13 +32,12 @@ const ExternalFormLayoutBase: React.StatelessComponent<ExternalFormLayoutProps &
                 <Typography variant="headline" align="center" color="inherit" style={style(theme).titleTypo} >
                     {title}
                 </Typography>
-                <Paper >
-                    <AppBar position="static" color="default">
+                <Paper style={style(theme).paper} >
+                    <AppBar position="static" color="default" elevation={0}>
                         <Tabs
-                            value={-1}
+                            value={1}
                             textColor={'primary'}
                             centered={true}
-                            fullWidth={true}
                         >
                             <Tab label={tabLabel} icon={icon} selected={false} />
                         </Tabs>
@@ -56,9 +55,9 @@ const ExternalFormLayoutBase: React.StatelessComponent<ExternalFormLayoutProps &
     );
 };
 
-const ExternalFormLayoutWithTheme: React.ComponentClass<ExternalFormLayoutProps> = withTheme()(ExternalFormLayoutBase);
+const ExternalFormLayoutWithTheme: React.ComponentType<ExternalFormLayoutProps> = withTheme()(ExternalFormLayoutBase);
 
 /**
  * Layout design to show a form for login or signup
  */
-export const ExternalFormLayout: React.ComponentClass<ExternalFormLayoutProps> = (ExternalFormLayoutWithTheme);
+export const ExternalFormLayout: React.ComponentType<ExternalFormLayoutProps> = (ExternalFormLayoutWithTheme);

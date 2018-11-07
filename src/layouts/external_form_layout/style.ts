@@ -10,6 +10,9 @@ export const style = (theme: Theme): Record<string, Partial<CSSProperties>> => {
             alignItems: 'center',
             justifyContent: 'center',
         },
+        paper: {
+            minWidth: '375px',
+        },
         childrenContainer: {
             padding: theme.spacing.unit,
             paddingTop: 2 * theme.spacing.unit,

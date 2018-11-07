@@ -1,6 +1,5 @@
 import { Store, withState } from '@dump247/storybook-state';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { FilterButton, FilterButtonMenuProps } from '../../../../src';
@@ -17,7 +16,7 @@ export default storiesOf('2.1.12 Filter Button', module)
     );
   })
   //
-  .add('FilterButton', withInfo({ source: true })(() => {
+  .add('FilterButton', (() => {
 
     const filterMenu: FilterButtonMenuProps[] = [
       { name: 'All', action: action('All Clicked'), count: '88' },

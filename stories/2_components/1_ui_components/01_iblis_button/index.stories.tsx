@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
+import { Publish } from 'mdi-material-ui';
 import * as React from 'react';
 import { IblisButton } from '../../../../src';
 import { injectTheme } from '../../../decorators';
@@ -12,7 +12,7 @@ export default storiesOf('2.1.1 Iblis Button', module)
     );
   })
   //
-  .add('IblisButton', withInfo({ source: true })(() => (
+  .add('IblisButton', (() => (
     <IblisButton
       buttonType={'primary'}
       buttonLabel={'Iblis'}
@@ -25,6 +25,24 @@ export default storiesOf('2.1.1 Iblis Button', module)
       buttonType={'default'}
       buttonLabel={'Iblis'}
       onClick={action('Button Clicked')}
+    />
+  )))
+  //
+  .add('Primary Button with Icon', (() => (
+    <IblisButton
+      buttonType={'primary'}
+      buttonLabel={'Iblis'}
+      onClick={action('Button Clicked')}
+      icon={<Publish />}
+    />
+  )))
+  //
+  .add('Default Button with Icon', (() => (
+    <IblisButton
+      buttonType={'default'}
+      buttonLabel={'Iblis'}
+      onClick={action('Button Clicked')}
+      icon={<Publish />}
     />
   )))
   //

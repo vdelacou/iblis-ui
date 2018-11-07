@@ -1,4 +1,4 @@
-import { AppBar, Grid, Paper, Toolbar, Typography, withStyles, WithStyles, WithTheme, withTheme } from '@material-ui/core';
+import { AppBar, Grid, Paper, Toolbar, Typography, WithStyles, withStyles, WithTheme, withTheme } from '@material-ui/core';
 import * as React from 'react';
 import { ClassKey, createSytle, style } from './style';
 
@@ -7,11 +7,15 @@ export interface CardTitleLayoutProps {
      * The text to display in the top of the card
      */
     title: string;
+    /**
+     * The component to display if needed at the right of the card
+     */
+    rightComponent?: React.ReactNode;
 }
 
 const CardTitleLayoutBase: React.StatelessComponent<CardTitleLayoutProps & WithStyles<ClassKey> & WithTheme & { children?: React.ReactNode }> = (props) => {
 
-    const { title, classes, theme, children } = props;
+    const { title, classes, rightComponent, theme, children } = props;
 
     return (
         <Paper>
@@ -24,10 +28,16 @@ const CardTitleLayoutBase: React.StatelessComponent<CardTitleLayoutProps & WithS
                 <Toolbar
                     classes={{ root: classes.toolBarMenuRoot }}
                 >
-                    <Typography variant="button" color={'primary'}  >
-                        {title}
-                    </Typography>
-
+                    <Grid container={true} justify={'space-between'} alignItems={'center'}>
+                        <Grid item={true} >
+                            <Typography variant="button" color={'primary'}  >
+                                {title}
+                            </Typography>
+                        </Grid>
+                        <Grid item={true} >
+                            {rightComponent}
+                        </Grid>
+                    </Grid>
                 </Toolbar>
             </AppBar>
             <Grid container={true}>
@@ -39,10 +49,10 @@ const CardTitleLayoutBase: React.StatelessComponent<CardTitleLayoutProps & WithS
     );
 };
 
-const CardTitleLayoutWithStyle: React.ComponentType<CardTitleLayoutProps & WithTheme> = withStyles(createSytle)(CardTitleLayoutBase);
-const CardTitleLayoutWithTheme: React.ComponentClass<CardTitleLayoutProps> = withTheme()(CardTitleLayoutWithStyle);
+const CardTitleLayoutWithStyle: React.ComponentType<CardTitleLayoutProps> = withStyles(createSytle)(CardTitleLayoutBase);
+const CardTitleLayoutWithTheme: React.ComponentType<CardTitleLayoutProps> = withTheme()(CardTitleLayoutWithStyle);
 
 /**
  * Card with a title
  */
-export const CardTitleLayout: React.ComponentClass<CardTitleLayoutProps> = (CardTitleLayoutWithTheme);
+export const CardTitleLayout: React.ComponentType<CardTitleLayoutProps> = (CardTitleLayoutWithTheme);

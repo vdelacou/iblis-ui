@@ -6,6 +6,9 @@ export const style = (theme: Theme): Record<string, Partial<CSSProperties>> => {
         mainContainer: {
             textAlign: 'center',
         },
+        buttonBase: {
+            flexGrow: 1,
+        },
         activeItemContainer: {
             flexGrow: 1,
             zIndex: 1,

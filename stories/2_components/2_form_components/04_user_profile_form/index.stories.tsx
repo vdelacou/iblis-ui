@@ -1,6 +1,5 @@
 import { Store, withState } from '@dump247/storybook-state';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { ConfigProps, reduxForm } from 'redux-form';
@@ -31,12 +30,12 @@ export default storiesOf('2.2.4 User Profile Form', module)
         );
     })
     //
-    .add('UserProfileForm', withInfo({ source: true })(() => {
+    .add('UserProfileForm', (() => {
 
         // configure the form
         function config(): ConfigProps<UserProfileFormValues, UserProfileFormProps> {
             const configForm: ConfigProps<UserProfileFormValues, UserProfileFormProps> = {
-                form: 'form',
+                form: 'UserProfileForm',
             };
             return configForm;
         }
@@ -97,7 +96,7 @@ export default storiesOf('2.2.4 User Profile Form', module)
         // configure the form
         function config(): ConfigProps<UserProfileFormValues, UserProfileFormProps> {
             const configForm: ConfigProps<UserProfileFormValues, UserProfileFormProps> = {
-                form: 'form',
+                form: 'UserProfileForm',
             };
             return configForm;
         }

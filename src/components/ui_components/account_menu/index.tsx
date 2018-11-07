@@ -107,9 +107,9 @@ const renderLogoutIcon = (classes: Record<ClassKey, string>, signOutIcon?: React
     return null;
 };
 
-const AccountMenuWithStyle: React.ComponentType<AccountMenuProps & WithTheme> = withStyles(createSytle)(AccountMenuBase);
-const AccountMenuWithTheme: React.ComponentClass<AccountMenuProps> = withTheme()(AccountMenuWithStyle);
+const AccountMenuWithStyle: React.ComponentType<AccountMenuProps> = withStyles(createSytle)(AccountMenuBase);
+const AccountMenuWithTheme: React.ComponentType<AccountMenuProps> = withTheme()(AccountMenuWithStyle);
 /**
  * Display a menu with account card and logout button
  */
-export const AccountMenu: React.ComponentClass<AccountMenuProps> = (AccountMenuWithTheme);
+export const AccountMenu: React.ComponentType<AccountMenuProps> = (AccountMenuWithTheme);

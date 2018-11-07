@@ -1,7 +1,7 @@
 import { Grid, WithTheme, withTheme } from '@material-ui/core';
-import { IblisButton, IblisTextField } from '@src/components';
 import * as React from 'react';
 import { Field, InjectedFormProps } from 'redux-form';
+import { IblisButton, IblisTextField } from '../../../components';
 import { style } from './style';
 
 export interface ManagedAddSimpleFormValues {
@@ -62,7 +62,6 @@ const ManagedAddSimpleFormBase:
                                 validate={validateFunctions}
                                 required={true}
                                 placeholder={namePlaceHolder}
-                                fullWidth={true}
                             />
                         </Grid>
                         {/* button */}
@@ -80,11 +79,11 @@ const ManagedAddSimpleFormBase:
         );
     };
 
-const ManagedAddSimpleFormWithTheme: React.ComponentClass<ManagedAddSimpleFormProps & InjectedFormProps<ManagedAddSimpleFormValues, ManagedAddSimpleFormProps>> =
+const ManagedAddSimpleFormWithTheme: React.ComponentType<ManagedAddSimpleFormProps & InjectedFormProps<ManagedAddSimpleFormValues, ManagedAddSimpleFormProps>> =
     withTheme()(ManagedAddSimpleFormBase);
 
 /**
  * Simple form with only one value to add
  */
-export const ManagedAddSimpleForm: React.ComponentClass<ManagedAddSimpleFormProps & InjectedFormProps<ManagedAddSimpleFormValues, ManagedAddSimpleFormProps>> =
+export const ManagedAddSimpleForm: React.ComponentType<ManagedAddSimpleFormProps & InjectedFormProps<ManagedAddSimpleFormValues, ManagedAddSimpleFormProps>> =
     (ManagedAddSimpleFormWithTheme);

@@ -113,10 +113,10 @@ const UploadAvatarBase: React.StatelessComponent<UploadAvatarProps & WithTheme> 
     );
 };
 
-const UploadAvatarWithTheme: React.ComponentClass<UploadAvatarProps> = withTheme()(UploadAvatarBase);
+const UploadAvatarWithTheme: React.ComponentType<UploadAvatarProps> = withTheme()(UploadAvatarBase);
 
 /**
  * Upload an picture as avatar.
  * The result is the javascript file and the binary.
  */
-export const UploadAvatar: React.ComponentClass<UploadAvatarProps> = (UploadAvatarWithTheme);
+export const UploadAvatar: React.ComponentType<UploadAvatarProps> = (UploadAvatarWithTheme);

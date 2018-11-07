@@ -17,12 +17,12 @@ exports[`renders correctly 1`] = `
           <div
             style={
               Object {
-                "height": "100px",
+                "height": 100,
                 "msOverflowStyle": "scrollbar",
                 "overflow": "scroll",
                 "position": "absolute",
-                "top": "-10000px",
-                "width": "100px",
+                "top": -10000,
+                "width": 100,
               }
             }
           />
@@ -31,7 +31,7 @@ exports[`renders correctly 1`] = `
           className="MuiTabs-flexContainer-44"
         >
           <div
-            className="MuiTabs-scroller-45 MuiTabs-scrollable-47"
+            className="MuiTabs-scroller-46 MuiTabs-scrollable-48"
             onScroll={[Function]}
             role="tablist"
             style={

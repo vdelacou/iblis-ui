@@ -5,7 +5,7 @@ exports[`renders correctly 1`] = `
   className="MuiGrid-item-2"
 >
   <button
-    className="MuiButtonBase-root-97"
+    className="MuiButtonBase-root-98"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -34,7 +34,7 @@ exports[`renders correctly 1`] = `
     type="button"
   >
     <p
-      className="MuiTypography-root-100 MuiTypography-body1-109 MuiTypography-alignCenter-113"
+      className="MuiTypography-root-101 MuiTypography-body1-110 MuiTypography-alignCenter-114"
       style={
         Object {
           "fontWeight": "bold",
@@ -44,7 +44,7 @@ exports[`renders correctly 1`] = `
       All
     </p>
     <span
-      className="MuiTypography-root-100 MuiTypography-caption-110 MuiTypography-alignCenter-113"
+      className="MuiTypography-root-101 MuiTypography-caption-111 MuiTypography-alignCenter-114"
       style={
         Object {
           "paddingLeft": 8,
@@ -54,11 +54,11 @@ exports[`renders correctly 1`] = `
       88
     </span>
     <span
-      className="MuiTouchRipple-root-124"
+      className="MuiTouchRipple-root-126"
     />
   </button>
   <button
-    className="MuiButtonBase-root-97"
+    className="MuiButtonBase-root-98"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -84,12 +84,12 @@ exports[`renders correctly 1`] = `
     type="button"
   >
     <p
-      className="MuiTypography-root-100 MuiTypography-body1-109 MuiTypography-alignCenter-113"
+      className="MuiTypography-root-101 MuiTypography-body1-110 MuiTypography-alignCenter-114"
     >
       Published
     </p>
     <span
-      className="MuiTypography-root-100 MuiTypography-caption-110 MuiTypography-alignCenter-113"
+      className="MuiTypography-root-101 MuiTypography-caption-111 MuiTypography-alignCenter-114"
       style={
         Object {
           "paddingLeft": 8,
@@ -99,11 +99,11 @@ exports[`renders correctly 1`] = `
       34
     </span>
     <span
-      className="MuiTouchRipple-root-124"
+      className="MuiTouchRipple-root-126"
     />
   </button>
   <button
-    className="MuiButtonBase-root-97"
+    className="MuiButtonBase-root-98"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -132,12 +132,12 @@ exports[`renders correctly 1`] = `
     type="button"
   >
     <p
-      className="MuiTypography-root-100 MuiTypography-body1-109 MuiTypography-alignCenter-113"
+      className="MuiTypography-root-101 MuiTypography-body1-110 MuiTypography-alignCenter-114"
     >
       Draft
     </p>
     <span
-      className="MuiTypography-root-100 MuiTypography-caption-110 MuiTypography-alignCenter-113"
+      className="MuiTypography-root-101 MuiTypography-caption-111 MuiTypography-alignCenter-114"
       style={
         Object {
           "paddingLeft": 8,
@@ -147,7 +147,7 @@ exports[`renders correctly 1`] = `
       12
     </span>
     <span
-      className="MuiTouchRipple-root-124"
+      className="MuiTouchRipple-root-126"
     />
   </button>
 </div>

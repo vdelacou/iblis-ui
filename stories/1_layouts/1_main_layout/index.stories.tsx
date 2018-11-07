@@ -1,6 +1,5 @@
 import { AccountBox, AccountCircle, Archive, Home, PowerSettingsNew, Receipt, Settings } from '@material-ui/icons';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { AccountCard, AccountMenu, FooterMenu, FooterMenuLevelProps, FooterMenuProps, MainLayout, MainMenu, MainMenuProps } from '../../../src';
@@ -74,7 +73,7 @@ export default storiesOf('1.1 Main Layout', module)
     );
   })
   //
-  .add('MainLayout', withInfo({ source: true })(() => (
+  .add('MainLayout', (() => (
     <MainLayout
       menuComponent={mainMenu}
       footerComponent={(<FooterMenu {...footerMenuProps} />)}

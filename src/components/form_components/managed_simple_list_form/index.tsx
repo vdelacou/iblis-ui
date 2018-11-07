@@ -1,8 +1,8 @@
-import { Grid, IconButton, Menu, MenuItem, Tooltip, Typography, withTheme, WithTheme } from '@material-ui/core';
+import { Grid, IconButton, Menu, MenuItem, Tooltip, Typography, WithTheme, withTheme } from '@material-ui/core';
 import { Cancel, DeleteForever, Done, MoreVert } from '@material-ui/icons';
-import { IblisTextField } from '@src/components';
 import * as React from 'react';
 import { Field, InjectedFormProps } from 'redux-form';
+import { IblisTextField } from '../../../components';
 import { style } from './style';
 
 export interface ManagedSimpleListFormValues {
@@ -75,6 +75,34 @@ export interface ManagedSimpleListFormProps {
      * To show error if validation function is not satisfied
      */
     validateFunctions: Array<(value: string, allValues: ManagedSimpleListFormValues, props: ManagedSimpleListFormProps) => string | undefined>;
+    /**
+     * The component to display if needed at the left of the form
+     */
+    leftComponent?: React.ReactNode;
+    /**
+     * The height of the component
+     * @default 60
+     */
+    componentHeight?: number;
+    /**
+     * A list of label and action to add to the menu
+     * @default []
+     */
+    menuAction?: Array<{
+        /**
+         * The label to display on the menu
+         */
+        label: string;
+        /**
+         * If the menu is disabled
+         * @default false
+         */
+        disabled?: boolean;
+        /**
+         * The Function to call to when click on menu
+         */
+        action(id: string | number): void;
+    }>;
     /*
      * The Function to call to edit entity
      */
@@ -124,7 +152,9 @@ class ManagedSimpleListFormBase extends
         }
     }
 
-    renderMenu = (editLabel: string, deleteLabel: string, hasEdit: boolean, hasDelete: boolean, element?: HTMLElement) => {
+    renderMenu = (
+        editLabel: string, deleteLabel: string, hasEdit: boolean, hasDelete: boolean,
+        optionalMenu: Array<{ label: string; disabled?: boolean; action(id: string | number): void }> = [], element?: HTMLElement) => {
         return (
             <Menu
                 elevation={1}
@@ -137,6 +167,7 @@ class ManagedSimpleListFormBase extends
             >
                 {this.renderEditMenuItem(editLabel, hasEdit)}
                 {this.renderDeleteMenuItem(deleteLabel, hasDelete)}
+                {this.renderOptionalMenuItem(optionalMenu)}
             </Menu >
         );
     }
@@ -160,6 +191,25 @@ class ManagedSimpleListFormBase extends
                     {deleteLabel}
                 </MenuItem>
             );
+        } else {
+            return null;
+        }
+    }
+
+    renderOptionalMenuItem = (optionalMenu: Array<{ label: string; disabled?: boolean; action(id: string | number): void }> = []) => {
+        if (optionalMenu.length !== 0) {
+            return optionalMenu.map((menu, index) => {
+                if (this.props.initValues && this.props.initValues.entityId) {
+                    const id = this.props.initValues.entityId;
+                    return (
+                        <MenuItem disabled={menu.disabled} key={index} onClick={() => menu.action(id)}>
+                            {menu.label}
+                        </MenuItem>
+                    );
+                } else {
+                    return null;
+                }
+            });
         } else {
             return null;
         }
@@ -191,7 +241,6 @@ class ManagedSimpleListFormBase extends
                         required={true}
                         autoFocus={true}
                         withRef={true}
-                        fullWidth={true}
                         inputRef={(ref: HTMLInputElement) => this.focusInputField(ref)}
                     />
                 </div>
@@ -202,7 +251,7 @@ class ManagedSimpleListFormBase extends
     renderIconMenu = (
         editItem: boolean, deleteItem: boolean, //
         editConfirmLabel: string, editCancelLabel: string, deleteConfirmLabel: string, deleteCancelLabel: string, //
-        isLoading: boolean, hasEdit: boolean, hasDelete: boolean,
+        isLoading: boolean, hasEdit: boolean, hasDelete: boolean, optionalMenu: Array<{ label: string; disabled?: boolean; action(id: string | number): void }> = [],
     ) => {
         if (deleteItem) {
             return (
@@ -249,7 +298,7 @@ class ManagedSimpleListFormBase extends
                 </div>
             );
         }
-        if ((hasEdit || hasDelete)) {
+        if (hasEdit || hasDelete || (optionalMenu.length > 0)) {
             return (
                 <div >
                     <IconButton
@@ -267,10 +316,13 @@ class ManagedSimpleListFormBase extends
     render(): React.ReactNode {
 
         const {
-            editLabel = 'Edit', deleteLabel = 'Delete', confirmDeleteLabel = 'Do you confirm you want to delete this?',
-            editConfirmLabel = 'Edit', editCancelLabel = 'Cancel', deleteConfirmLabel = 'Delete', deleteCancelLabel = 'Cancel', isLoading = false,
-            hasEdit = true, hasDelete = true }
+            editLabel = 'Edit', deleteLabel = 'Delete', confirmDeleteLabel = 'Do you confirm you want to delete this?', leftComponent, componentHeight = 60,
+            isLoading = false, menuAction = [], hasEdit = true, hasDelete = true, theme }
             = this.props;
+        const editCfrmLbl = this.props.editConfirmLabel ? this.props.editConfirmLabel : 'Edit';
+        const editCncLbl = this.props.editCancelLabel ? this.props.editCancelLabel : 'Cancel';
+        const dltCfrmLbl = this.props.deleteConfirmLabel ? this.props.deleteConfirmLabel : 'Delete';
+        const dltCncLbl = this.props.deleteCancelLabel ? this.props.deleteCancelLabel : 'Cancel';
         const { editItem, deleteItem, element } = this.state;
 
         if (this.props.initValues && !this.props.initialized) {
@@ -282,28 +334,39 @@ class ManagedSimpleListFormBase extends
                     onSubmit={this.props.handleSubmit(this.submitForm)}
                     noValidate={true}
                 >
-                    <Grid container={true} alignItems={'flex-start'}>
-                        <Grid item={true} xs={8} sm={10} style={{ height: 60 }} >
-                            {this.renderValue(editItem, deleteItem, confirmDeleteLabel)}
+                    <Grid container={true} alignItems={'center'}>
+                        <Grid item={true} xs={8} sm={10} >
+                            <div style={style(theme, componentHeight).mainContainer}>
+                                <div
+                                    style={leftComponent ? style(theme, componentHeight).leftComponentContainerPresent : style(theme, componentHeight).leftComponentContainer}
+                                >
+                                    {leftComponent}
+                                </div>
+                                <div style={style(theme, componentHeight).renderValueContainerFlex} >
+                                    <div style={style(theme, componentHeight).renderValueContainer}>
+                                        {this.renderValue(editItem, deleteItem, confirmDeleteLabel)}
+                                    </div>
+                                </div>
+                            </div>
                         </Grid>
                         <Grid item={true} xs={4} sm={2} style={style(this.props.theme).iconMenuContainer}>
-                            {this.renderIconMenu(editItem, deleteItem, editConfirmLabel, editCancelLabel, deleteConfirmLabel, deleteCancelLabel, isLoading, hasEdit, hasDelete)}
+                            {this.renderIconMenu(editItem, deleteItem, editCfrmLbl, editCncLbl, dltCfrmLbl, dltCncLbl, isLoading, hasEdit, hasDelete, menuAction)}
                         </Grid>
                     </Grid>
                 </form>
                 {/* Render Menu */}
-                {this.renderMenu(editLabel, deleteLabel, hasEdit, hasDelete, element)}
+                {this.renderMenu(editLabel, deleteLabel, hasEdit, hasDelete, menuAction, element)}
             </div >
         );
     }
 }
 
-const ManagedSimpleListFormWithTheme: React.ComponentClass<ManagedSimpleListFormProps & InjectedFormProps<ManagedSimpleListFormValues, ManagedSimpleListFormProps>> =
+const ManagedSimpleListFormWithTheme: React.ComponentType<ManagedSimpleListFormProps & InjectedFormProps<ManagedSimpleListFormValues, ManagedSimpleListFormProps>> =
     withTheme()(ManagedSimpleListFormBase);
 
 /**
  * A simple form for update or delete an entity with only one element
  * If no edit or delete button asked, then the menu is not displayed
  */
-export const ManagedSimpleListForm: React.ComponentClass<ManagedSimpleListFormProps & InjectedFormProps<ManagedSimpleListFormValues, ManagedSimpleListFormProps>> =
+export const ManagedSimpleListForm: React.ComponentType<ManagedSimpleListFormProps & InjectedFormProps<ManagedSimpleListFormValues, ManagedSimpleListFormProps>> =
     (ManagedSimpleListFormWithTheme);

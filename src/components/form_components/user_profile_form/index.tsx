@@ -1,7 +1,7 @@
 import { Grid, Hidden, Typography } from '@material-ui/core';
-import { IblisButton, IblisSelectField, IblisTextField } from '@src/components/ui_components';
 import * as React from 'react';
 import { Field, InjectedFormProps } from 'redux-form';
+import { IblisButton, IblisSelectField, IblisTextField } from '../../../components/ui_components';
 
 export interface UserProfileFormValues {
     /**
@@ -121,7 +121,6 @@ const UserProfileFormBase: React.StatelessComponent<UserProfileFormProps & Injec
                                     disabled={submitting || isLoading}
                                     validate={[requiredTextField]}
                                     required={true}
-                                    fullWidth={true}
                                 />
                             </Grid>
                         </Grid>
@@ -140,7 +139,6 @@ const UserProfileFormBase: React.StatelessComponent<UserProfileFormProps & Injec
                                     disabled={submitting || isLoading}
                                     validate={[requiredTextField]}
                                     required={true}
-                                    fullWidth={true}
                                 />
                             </Grid>
                         </Grid>
@@ -159,7 +157,6 @@ const UserProfileFormBase: React.StatelessComponent<UserProfileFormProps & Injec
                                     disabled={submitting || isLoading}
                                     validate={[requiredTextField, validateEmail]}
                                     required={true}
-                                    fullWidth={true}
                                 />
                             </Grid>
                         </Grid>
@@ -178,7 +175,6 @@ const UserProfileFormBase: React.StatelessComponent<UserProfileFormProps & Injec
                                     disabled={submitting || isLoading}
                                     validate={[requiredTextField]}
                                     required={true}
-                                    fullWidth={true}
                                     values={languagePossibleValues}
                                 />
                             </Grid>
@@ -213,7 +209,7 @@ const UserProfileFormBase: React.StatelessComponent<UserProfileFormProps & Injec
 };
 
 function requiredTextField(value: string, _allValues: UserProfileFormValues, props: UserProfileFormProps) {
-    return value ? undefined : props.requiredErrorLabel;
+    return value && value.trim() !== '' ? undefined : props.requiredErrorLabel;
 }
 
 function validateEmail(value: string, _allValues: UserProfileFormValues, props: UserProfileFormProps) {

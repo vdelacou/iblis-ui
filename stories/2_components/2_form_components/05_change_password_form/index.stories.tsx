@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { ConfigProps, reduxForm } from 'redux-form';
@@ -18,11 +17,11 @@ export default storiesOf('2.2.5 Change Password Form', module)
         );
     })
     //
-    .add('ChangePasswordForm', withInfo({ source: true })(() => {
+    .add('ChangePasswordForm', (() => {
         // configure the form
         function config(): ConfigProps<ChangePasswordFormValues, ChangePasswordFormProps> {
             const configForm: ConfigProps<ChangePasswordFormValues, ChangePasswordFormProps> = {
-                form: 'form',
+                form: 'ChangePasswordForm',
             };
             return configForm;
         }

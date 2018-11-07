@@ -1,5 +1,5 @@
 import initStoryshots from '@storybook/addon-storyshots';
 
 initStoryshots({
-    configPath: '.storybook/configShot.js',
+    configPath: '.storybook/configShot.ts',
 });

@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { IblisSnackbar } from '../../../../src';
@@ -12,7 +11,7 @@ export default storiesOf('2.1.4 Iblis SnackBar', module)
     );
   })
   //
-  .add('IblisSnackbar', withInfo({ source: true })(() => (
+  .add('IblisSnackbar', (() => (
     <IblisSnackbar
       isError={true}
       errorText={'Error occurs, we will fixed it soon'}

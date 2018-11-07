@@ -36,7 +36,7 @@ const FilterButtonBase: React.StatelessComponent<FilterButtonProps & WithTheme> 
     const activeFilter = listFilter.length > activeIndex ? activeIndex : 0;
 
     return (
-        <Grid item={true} direction={'row'} >
+        <Grid item={true} >
             {renderButtonFilter(listFilter, activeFilter, theme)}
         </Grid >
     );
@@ -109,10 +109,10 @@ const renderCount = (theme: Theme, count?: string) => {
     }
 };
 
-const FilterButtonWithTheme: React.ComponentClass<FilterButtonProps> = withTheme()(FilterButtonBase);
+const FilterButtonWithTheme: React.ComponentType<FilterButtonProps> = withTheme()(FilterButtonBase);
 
 /**
  * A button to be used to filtered entities list
  * The count can be hide or displayed
  */
-export const FilterButton: React.ComponentClass<FilterButtonProps> = (FilterButtonWithTheme);
+export const FilterButton: React.ComponentType<FilterButtonProps> = (FilterButtonWithTheme);

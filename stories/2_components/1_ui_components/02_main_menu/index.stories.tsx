@@ -1,7 +1,6 @@
 
 import { AccountBox, AccountCircle, Archive, Home, PowerSettingsNew, Receipt, Settings } from '@material-ui/icons';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { RenderFunction, storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { AccountCard, AccountMenu, MainMenu, MainMenuProps } from '../../../../src';
@@ -51,7 +50,7 @@ export default storiesOf('2.1.2 Main Menu', module)
     );
   })
   //
-  .add('MainMenu', withInfo({ source: true })(() => {
+  .add('MainMenu', (() => {
     const mainMenuProps: MainMenuProps = {
       mainTitle: 'Iblis',
       mainTitleAction: action('Main Title clicked'),

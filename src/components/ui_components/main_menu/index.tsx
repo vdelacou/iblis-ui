@@ -3,8 +3,8 @@ import {
     WithStyles, withStyles, WithTheme, withTheme, withWidth
 } from '@material-ui/core';
 import { SvgIconProps } from '@material-ui/core/SvgIcon';
-import { WithWidthProps } from '@material-ui/core/withWidth';
 import * as React from 'react';
+import { WithWidth } from '../../../../node_modules/@material-ui/core/withWidth';
 import { ClassKey, createSytle, style } from './style';
 
 export interface MainMenuLevelProps {
@@ -72,7 +72,7 @@ class MainMenuState {
     readonly anchorEl?: any = undefined;
 }
 
-class MainMenuBase extends React.PureComponent<MainMenuProps & WithStyles<ClassKey> & WithTheme & WithWidthProps, MainMenuState>  {
+class MainMenuBase extends React.PureComponent<MainMenuProps & WithStyles<ClassKey> & WithTheme & WithWidth, MainMenuState>  {
 
     readonly state = new MainMenuState();
 
@@ -251,9 +251,9 @@ class MainMenuBase extends React.PureComponent<MainMenuProps & WithStyles<ClassK
     }
 }
 
-const MainMenuWithStyle: React.ComponentType<MainMenuProps & WithTheme & WithWidthProps> = withStyles(createSytle)(MainMenuBase);
-const MainMenuWithTheme: React.ComponentClass<MainMenuProps & WithWidthProps> = withTheme()(MainMenuWithStyle);
-const MainMenuWithWidth: React.ComponentClass<MainMenuProps> = withWidth()(MainMenuWithTheme);
+const MainMenuWithStyle: React.ComponentType<MainMenuProps & WithWidth> = withStyles(createSytle)(MainMenuBase);
+const MainMenuWithTheme: React.ComponentType<MainMenuProps & WithWidth> = withTheme()(MainMenuWithStyle);
+const MainMenuWithWidth: React.ComponentType<MainMenuProps> = withWidth()(MainMenuWithTheme);
 
 /**
  * Component to display a menu. This menu is responsive.
@@ -262,4 +262,4 @@ const MainMenuWithWidth: React.ComponentClass<MainMenuProps> = withWidth()(MainM
  * The last menu item can show a popup modal.
  * All the icons or logos are optional
  */
-export const MainMenu: React.ComponentClass<MainMenuProps> = (MainMenuWithWidth);
+export const MainMenu: React.ComponentType<MainMenuProps> = (MainMenuWithWidth);
