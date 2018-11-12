@@ -1,13 +1,15 @@
 {
   "name": "iblis-ui",
-  "version": "0.0.1-alpha.7.12",
+  "version": "0.0.1-alpha.7.13",
   "license": "Apache-2.0",
   "author": "DELACOURT Vincent <vincent.delacourt@gmail.com>",
   "description": "Beautiful React UI components to be used in a SaaS",
-  "contributors": [{
-    "name": "DELACOURT Vincent",
-    "email": "vincent.delacourt@gmail.com"
-  }],
+  "contributors": [
+    {
+      "name": "DELACOURT Vincent",
+      "email": "vincent.delacourt@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:vdelacou/iblis-ui.git"
@@ -51,9 +53,9 @@
     "@babel/core": "^7.0.0",
     "@dump247/storybook-state": "^1.5.0",
     "@storybook/addon-actions": "^4.0.0-alpha.20",
+    "@storybook/addon-options": "^4.0.0-alpha.20",
     "@storybook/addon-storyshots": "^4.0.0-alpha.20",
     "@storybook/addon-viewport": "^4.0.0-alpha.20",
-    "@storybook/addon-options": "^4.0.0-alpha.20",
     "@storybook/addons": "^4.0.0-alpha.20",
     "@storybook/cli": "^4.0.0-alpha.20",
     "@storybook/react": "^4.0.0-alpha.20",
